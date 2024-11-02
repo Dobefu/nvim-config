@@ -1,4 +1,5 @@
 local lsp = require("lspconfig");
+local luasnip = require("luasnip");
 local cmp = require("cmp");
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -25,6 +26,13 @@ lsp.denols.setup({
   root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
 })
 
+lsp.tailwindcss.setup({
+  cmd = { "tailwindcss-language-server", "--stdio" },
+  filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+  root_dir = lsp.util.root_pattern("tailwind.config.js", "package.json"),
+  settings = {},
+})
+
 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 
 vim.diagnostic.config({
@@ -32,7 +40,6 @@ vim.diagnostic.config({
 })
 
 local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup {
   snippet = {
@@ -72,6 +79,9 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'buffer' },
+    { name = 'nvim_lua' },
+    { name = 'path' },
+    { name = 'tailwindcss' },
   },
 }
 

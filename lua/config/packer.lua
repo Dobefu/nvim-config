@@ -33,6 +33,14 @@ return require('packer').startup(function(use)
   use('L3MON4D3/LuaSnip');
   use('nvim-lua/completion-nvim');
 
+  use({
+    'nvimdev/lspsaga.nvim',
+    after = 'nvim-lspconfig',
+    config = function()
+      require('lspsaga').setup({})
+    end,
+  });
+
   use('folke/trouble.nvim');
 
   use('nvim-tree/nvim-web-devicons');
