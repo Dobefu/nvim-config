@@ -1,4 +1,7 @@
-.DS_Store
 backups/
 swap/
 undodir/
+
+main.shada
+
+.DS_Store
