@@ -1,5 +1,6 @@
 local lsp = require("lspconfig");
 local luasnip = require("luasnip");
+local telescope = require("telescope.builtin");
 local cmp = require("cmp");
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -12,13 +13,64 @@ vim.g.markdown_fenced_languages = {
 -- Languages: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 
 lsp.lua_ls.setup({})
-lsp.vuels.setup({})
 lsp.gopls.setup({})
 
 lsp.ts_ls.setup({
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = vim.fn.expand(
+          '$HOME/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/typescript-plugin'),
+        languages = { "javascript", "typescript", "vue" },
+      },
+    },
+  },
+  filetypes = {
+    "javascript",
+    "typescript",
+    "vue",
+  },
+})
+
+lsp.vuels.setup({
   on_attach = on_attach,
-  root_dir = lsp.util.root_pattern("package.json"),
-  single_file_support = false
+  root_dir = lsp.util.root_pattern("nuxt.config.ts"),
+})
+
+lsp.volar.setup({
+  on_attach = on_attach,
+  root_dir = lsp.util.root_pattern("nuxt.config.ts"),
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+  init_options = {
+    typescript = {
+      tsdk = vim.fn.expand('$HOME/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib'),
+    },
+    preferences = {
+      disableSuggestions = true,
+    },
+    languageFeatures = {
+      implementation = true,
+      references = true,
+      definition = true,
+      typeDefinition = true,
+      callHierarchy = true,
+      hover = true,
+      rename = true,
+      renameFileRefactoring = true,
+      signatureHelp = true,
+      codeAction = true,
+      workspaceSymbol = true,
+      diagnostics = true,
+      semanticTokens = true,
+      completion = {
+        defaultTagNameCase = 'both',
+        defaultAttrNameCase = 'kebabCase',
+        getDocumentNameCasesRequest = false,
+        getDocumentSelectionRequest = false,
+      },
+    },
+  },
 })
 
 lsp.denols.setup({
@@ -33,7 +85,8 @@ lsp.tailwindcss.setup({
   settings = {},
 })
 
-vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+vim.keymap.set("n", "gd", function() telescope.lsp_definitions({ jump_type = "tab" }) end,
+  { silent = true, noremap = true })
 
 vim.diagnostic.config({
   virtual_text = true,
