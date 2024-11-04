@@ -19,7 +19,6 @@ lsp.gopls.setup({})
 lsp.ts_ls.setup({})
 lsp.vuels.setup({})
 lsp.volar.setup({})
-lsp.denols.setup({})
 lsp.tailwindcss.setup({})
 lsp.vimls.setup({})
 
