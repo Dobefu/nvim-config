@@ -34,6 +34,9 @@ return require('packer').startup(function(use)
   use('nvim-lua/completion-nvim');
   use('folke/neoconf.nvim');
 
+  use('williamboman/mason.nvim');
+  use('williamboman/mason-lspconfig.nvim');
+
   use({
     'nvimdev/lspsaga.nvim',
     after = 'nvim-lspconfig',

@@ -1,89 +1,25 @@
+require("mason").setup()
+require("mason-lspconfig").setup()
 local lsp = require("lspconfig");
 local luasnip = require("luasnip");
 local telescope = require("telescope.builtin");
+local completion = require("completion");
 local cmp = require("cmp");
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-completion_callback = require('completion').on_attach
+completion_callback = completion.on_attach
 
 vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
 
--- Languages: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
-
 lsp.lua_ls.setup({})
 lsp.gopls.setup({})
-
-lsp.ts_ls.setup({
-  init_options = {
-    plugins = {
-      {
-        name = "@vue/typescript-plugin",
-        location = vim.fn.expand(
-          '$HOME/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/typescript-plugin'),
-        languages = { "javascript", "typescript", "vue" },
-      },
-    },
-  },
-  filetypes = {
-    "javascript",
-    "typescript",
-    "vue",
-  },
-})
-
-lsp.vuels.setup({
-  on_attach = on_attach,
-  root_dir = lsp.util.root_pattern("nuxt.config.ts"),
-})
-
-lsp.volar.setup({
-  on_attach = on_attach,
-  root_dir = lsp.util.root_pattern("nuxt.config.ts"),
-  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-  init_options = {
-    typescript = {
-      tsdk = vim.fn.expand('$HOME/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib'),
-    },
-    preferences = {
-      disableSuggestions = true,
-    },
-    languageFeatures = {
-      implementation = true,
-      references = true,
-      definition = true,
-      typeDefinition = true,
-      callHierarchy = true,
-      hover = true,
-      rename = true,
-      renameFileRefactoring = true,
-      signatureHelp = true,
-      codeAction = true,
-      workspaceSymbol = true,
-      diagnostics = true,
-      semanticTokens = true,
-      completion = {
-        defaultTagNameCase = 'both',
-        defaultAttrNameCase = 'kebabCase',
-        getDocumentNameCasesRequest = false,
-        getDocumentSelectionRequest = false,
-      },
-    },
-  },
-})
-
-lsp.denols.setup({
-  on_attach = on_attach,
-  root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
-})
-
-lsp.tailwindcss.setup({
-  cmd = { "tailwindcss-language-server", "--stdio" },
-  filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
-  root_dir = lsp.util.root_pattern("tailwind.config.js", "package.json"),
-  settings = {},
-})
+lsp.ts_ls.setup({})
+lsp.vuels.setup({})
+lsp.volar.setup({})
+lsp.denols.setup({})
+lsp.tailwindcss.setup({})
 
 vim.keymap.set("n", "gd", function() telescope.lsp_definitions({ jump_type = "tab" }) end,
   { silent = true, noremap = true })
