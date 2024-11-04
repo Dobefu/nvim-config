@@ -3,23 +3,25 @@ require("mason-lspconfig").setup()
 local lsp = require("lspconfig");
 local luasnip = require("luasnip");
 local telescope = require("telescope.builtin");
-local completion = require("completion");
 local cmp = require("cmp");
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require("cmp_nvim_lsp")
 
-completion_callback = completion.on_attach
+capabilities.default_capabilities()
 
 vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
 
-lsp.lua_ls.setup({})
+lsp.lua_ls.setup({
+  settings = { Lua = { diagnostics = { globals = { 'vim' } } } },
+})
 lsp.gopls.setup({})
 lsp.ts_ls.setup({})
 lsp.vuels.setup({})
 lsp.volar.setup({})
 lsp.denols.setup({})
 lsp.tailwindcss.setup({})
+lsp.vimls.setup({})
 
 vim.keymap.set("n", "gd", function() telescope.lsp_definitions({ jump_type = "tab" }) end,
   { silent = true, noremap = true })
@@ -27,8 +29,6 @@ vim.keymap.set("n", "gd", function() telescope.lsp_definitions({ jump_type = "ta
 vim.diagnostic.config({
   virtual_text = true,
 })
-
-local cmp = require('cmp')
 
 cmp.setup {
   snippet = {
@@ -39,7 +39,6 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert({
     ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
     ['<C-d>'] = cmp.mapping.scroll_docs(4),  -- Down
-    -- C-b (back) C-f (forward) for snippet placeholder navigation.
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
