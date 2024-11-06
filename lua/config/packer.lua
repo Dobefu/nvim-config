@@ -37,6 +37,8 @@ return require('packer').startup(function(use)
   use('williamboman/mason.nvim');
   use('williamboman/mason-lspconfig.nvim');
 
+  use('folke/which-key.nvim');
+
   use({
     'nvimdev/lspsaga.nvim',
     after = 'nvim-lspconfig',
