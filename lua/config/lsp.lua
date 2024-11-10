@@ -1,5 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
+
 local lsp = require("lspconfig");
 local luasnip = require("luasnip");
 local telescope = require("telescope.builtin");
@@ -29,7 +30,7 @@ vim.diagnostic.config({
   virtual_text = true,
 })
 
-cmp.setup {
+cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -63,6 +64,7 @@ cmp.setup {
     end, { 'i', 's' }),
   }),
   sources = {
+    { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'buffer' },
@@ -70,7 +72,7 @@ cmp.setup {
     { name = 'path' },
     { name = 'tailwindcss' },
   },
-}
+})
 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on(
