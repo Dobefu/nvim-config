@@ -20,8 +20,6 @@ return require('packer').startup(function(use)
 
   use('nvim-treesitter/nvim-treesitter-context');
 
-  use({ 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production' });
-
   use('neovim/nvim-lspconfig');
   use('hrsh7th/nvim-cmp');
   use('hrsh7th/cmp-buffer');
@@ -36,6 +34,7 @@ return require('packer').startup(function(use)
 
   use('williamboman/mason.nvim');
   use('williamboman/mason-lspconfig.nvim');
+  use('stevearc/conform.nvim');
 
   use('folke/which-key.nvim');
 
