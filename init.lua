@@ -1,12 +1,6 @@
 local config_dir = vim.fn.stdpath('config')
 
--- Automatically source the Nvimrc after saving it.
-vim.api.nvim_create_autocmd('bufWritePost', {
-  pattern = config_dir .. '/*',
-  callback = function() vim.cmd('luafile $MYVIMRC') end
-})
-
-vim.cmd[[colorscheme custom]]
+vim.cmd [[colorscheme custom]]
 
 require('config')
 
@@ -33,7 +27,7 @@ vim.g.mapleader = '\\'
 vim.opt.hidden = true
 vim.opt.showtabline = 2
 
--- Hightlight the line where the cursor is
+-- Hightlight the line where the cursor is.
 vim.opt.cursorline = true
 
 vim.opt.number = true

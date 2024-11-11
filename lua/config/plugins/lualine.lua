@@ -33,8 +33,8 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = bubbles_theme,
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -49,18 +49,18 @@ require('lualine').setup {
     }
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'diagnostics'},
+    lualine_a = { 'mode' },
+    lualine_b = { 'diagnostics' },
     lualine_c = { { 'filename', file_status = true, full_path = true, shorten = false, path = 2 } },
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
     lualine_c = { { 'filename', file_status = true, full_path = true, shorten = false, path = 2 } },
-    lualine_x = {'location'},
+    lualine_x = { 'location' },
     lualine_y = {},
     lualine_z = {}
   },
@@ -68,8 +68,10 @@ require('lualine').setup {
     lualine_a = {
       {
         'tabs',
-        max_length = vim.o.columns,
+        tab_max_length = vim.o.columns / 5,
+        max_length = function() return vim.o.columns end,
         mode = 1,
+        path = 0,
         fmt = function(name, context)
           local buflist = vim.fn.tabpagebuflist(context.tabnr);
           local winnr = vim.fn.tabpagewinnr(context.tabnr);
@@ -93,6 +95,11 @@ require('lualine').setup {
         end,
       },
     },
+    lualine_b = {},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {},
   },
   winbar = {},
   inactive_winbar = {},
