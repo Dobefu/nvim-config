@@ -8,6 +8,7 @@ conform.setup({
     typescriptreact = { "prettierd" },
     vue = { "prettierd" },
     go = { "goimports", "gofmt" },
+    php = { "phpcbf" },
   },
   format_on_save = {
     timeout_ms = 500,
