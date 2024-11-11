@@ -23,6 +23,8 @@ lsp.volar.setup({})
 lsp.tailwindcss.setup({})
 lsp.vimls.setup({})
 lsp.phpactor.setup({})
+lsp.twiggy_language_server.setup({})
+lsp.html.setup({})
 
 vim.keymap.set("n", "gd", function() telescope.lsp_definitions({ jump_type = "tab" }) end,
   { silent = true, noremap = true })
