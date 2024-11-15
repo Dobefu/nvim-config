@@ -33,6 +33,8 @@ vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.opt.signcolumn = "yes"
+
 -- Set the indents to two spaces.
 vim.opt.expandtab = true
 vim.opt.tabstop = 2

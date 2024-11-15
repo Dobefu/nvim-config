@@ -17,7 +17,7 @@ local analyzers_path = sonar_language_server_path .. "/extension/analyzers"
 require('lspconfig.configs').sonarlint_language_server = {
   default_config = {
     cmd = {
-      "sonarlint-language-server",
+      vim.fn.expand(sonar_language_server_path .. "/sonarlint-language-server"),
       "-stdio",
       "-analyzers",
       vim.fn.expand(analyzers_path .. "/sonarcfamily.jar"),
@@ -54,6 +54,7 @@ lsp.vimls.setup({})
 lsp.phpactor.setup({})
 lsp.twiggy_language_server.setup({})
 lsp.html.setup({})
+lsp.diagnosticls.setup({})
 lsp.sonarlint_language_server.setup({})
 
 vim.keymap.set("n", "gd", function() telescope.lsp_definitions({ jump_type = "tab" }) end,
