@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
   use('L3MON4D3/LuaSnip');
   use('nvim-lua/completion-nvim');
   use('folke/neoconf.nvim');
+  use('https://gitlab.com/schrieveslaach/sonarlint.nvim');
 
   use('williamboman/mason.nvim');
   use('williamboman/mason-lspconfig.nvim');
