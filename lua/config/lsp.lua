@@ -1,5 +1,7 @@
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+  automatic_installation = true,
+})
 
 local lsp = require("lspconfig");
 local luasnip = require("luasnip");
@@ -8,6 +10,33 @@ local cmp = require("cmp");
 local capabilities = require("cmp_nvim_lsp")
 
 capabilities.default_capabilities()
+
+local sonar_language_server_path = require("mason-registry").get_package("sonarlint-language-server"):get_install_path()
+local analyzers_path = sonar_language_server_path .. "/extension/analyzers"
+
+require('lspconfig.configs').sonarlint_language_server = {
+  default_config = {
+    cmd = {
+      "sonarlint-language-server",
+      "-stdio",
+      "-analyzers",
+      vim.fn.expand(analyzers_path .. "/sonarcfamily.jar"),
+      vim.fn.expand(analyzers_path .. "/sonargo.jar"),
+      vim.fn.expand(analyzers_path .. "/sonarhtml.jar"),
+      vim.fn.expand(analyzers_path .. "/sonariac.jar"),
+      vim.fn.expand(analyzers_path .. "/sonarjava.jar"),
+      vim.fn.expand(analyzers_path .. "/sonarjavasymbolicexecution.jar"),
+      vim.fn.expand(analyzers_path .. "/sonarjs.jar"),
+      vim.fn.expand(analyzers_path .. "/sonarlineomnisharp.jar"),
+      vim.fn.expand(analyzers_path .. "/sonarphp.jar"),
+      vim.fn.expand(analyzers_path .. "/sonarpython.jar"),
+      vim.fn.expand(analyzers_path .. "/sonartext.jar"),
+      vim.fn.expand(analyzers_path .. "/sonarxml.jar"),
+    },
+    filetypes = { "c", "c++", "c#", "css", "docker", "go", "html", "ipython", "java", "javascript", "kubernetes", "typescript", "python", "php", "terraform", "text", "xml", "yaml" },
+    root_dir = lsp.util.root_pattern(".git"),
+  }
+}
 
 vim.g.markdown_fenced_languages = {
   "ts=typescript"
@@ -25,6 +54,7 @@ lsp.vimls.setup({})
 lsp.phpactor.setup({})
 lsp.twiggy_language_server.setup({})
 lsp.html.setup({})
+lsp.sonarlint_language_server.setup({})
 
 vim.keymap.set("n", "gd", function() telescope.lsp_definitions({ jump_type = "tab" }) end,
   { silent = true, noremap = true })
