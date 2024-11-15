@@ -38,6 +38,8 @@ return require('packer').startup(function(use)
 
   use('folke/which-key.nvim');
 
+  use('airblade/vim-gitgutter');
+
   use({
     'nvimdev/lspsaga.nvim',
     after = 'nvim-lspconfig',

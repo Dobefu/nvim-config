@@ -354,4 +354,8 @@ else
   highlight CursorColumn cterm=bold gui=bold
 endif
 
+highlight GitGutterAdd    guibg=Green ctermfg=2
+highlight GitGutterChange guibg=DarkCyan ctermfg=3
+highlight GitGutterDelete guibg=Red ctermfg=1
+
 " vim: set fdl=0 fdm=marker:
