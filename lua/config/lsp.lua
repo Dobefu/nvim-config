@@ -17,7 +17,7 @@ local analyzers_path = sonar_language_server_path .. "/extension/analyzers"
 require('sonarlint').setup({
   server = {
     cmd = {
-      vim.fn.expand(sonar_language_server_path .. "/sonarlint-language-server"),
+      "sonarlint-language-server",
       "-stdio",
       "-analyzers",
       vim.fn.expand(analyzers_path .. "/sonarcfamily.jar"),
@@ -34,7 +34,7 @@ require('sonarlint').setup({
       vim.fn.expand(analyzers_path .. "/sonarxml.jar"),
     },
   },
-  filetypes = { "c", "c++", "c#", "css", "docker", "go", "html", "ipython", "java", "javascript", "kubernetes", "typescript", "python", "php", "terraform", "text", "xml", "yaml" },
+  filetypes = { "c", "cpp", "csharp", "css", "docker", "go", "html", "ipython", "java", "javascript", "kubernetes", "typescript", "python", "php", "terraform", "text", "xml", "yaml" },
   root_dir = lsp.util.root_pattern(".git"),
 })
 
