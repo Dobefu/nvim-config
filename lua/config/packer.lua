@@ -48,8 +48,6 @@ return require('packer').startup(function(use)
 
   use('folke/which-key.nvim');
 
-  use('willothy/nvim-cokeline');
-
   use('airblade/vim-gitgutter');
 
   use({
