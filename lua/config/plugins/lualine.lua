@@ -15,7 +15,7 @@ local bubbles_theme = {
   normal = {
     a = { fg = colors.black, bg = colors.violet },
     b = { fg = colors.green, bg = colors.grey },
-    c = { fg = colors.white, bg = colors.grey },
+    c = { fg = colors.white },
   },
 
   insert = { a = { fg = colors.black, bg = colors.green } },
@@ -43,9 +43,9 @@ require('lualine').setup {
     always_divide_middle = true,
     globalstatus = false,
     refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
+      statusline = 100,
+      tabline = 100,
+      winbar = 100,
     }
   },
   sections = {
@@ -90,9 +90,7 @@ require('lualine').setup {
             icon = '';
             color = colors.white;
           end
-          print(string.format('\27[%sm', vim.api.nvim_get_color_by_name(color)) .. icon)
-          -- vim.api.nvim_echo({ { icon, "Type" } }, true, {})
-          return ' ' .. name .. (mod == 1 and ' ●' or '');
+          return icon .. ' ' .. name .. (mod == 1 and ' ●' or '');
         end,
       },
     },

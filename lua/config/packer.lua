@@ -17,6 +17,7 @@ return require('packer').startup(function(use)
   use('airblade/vim-rooter');
 
   use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' });
+  use({ 'mistricky/codesnap.nvim', run = 'make' });
 
   use('nvim-treesitter/nvim-treesitter-context');
 
