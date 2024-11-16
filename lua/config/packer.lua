@@ -32,6 +32,13 @@ return require('packer').startup(function(use)
   use('nvim-lua/completion-nvim');
   use('folke/neoconf.nvim');
   use('https://gitlab.com/schrieveslaach/sonarlint.nvim');
+  use('j-hui/fidget.nvim');
+  use({
+    'sontungexpt/better-diagnostic-virtual-text',
+    config = function()
+      require('better-diagnostic-virtual-text').setup({})
+    end
+  });
 
   use('williamboman/mason.nvim');
   use('williamboman/mason-lspconfig.nvim');
