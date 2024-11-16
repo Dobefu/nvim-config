@@ -354,6 +354,7 @@ else
   highlight CursorColumn cterm=bold gui=bold
 endif
 
+" Git Gutter colours.
 highlight GitGutterAdd    guibg=Green ctermfg=2
 highlight GitGutterChange guibg=DarkCyan ctermfg=3
 highlight GitGutterDelete guibg=Red ctermfg=1

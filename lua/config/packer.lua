@@ -44,7 +44,11 @@ return require('packer').startup(function(use)
   use('williamboman/mason-lspconfig.nvim');
   use('stevearc/conform.nvim');
 
+  use('xiyaowong/transparent.nvim');
+
   use('folke/which-key.nvim');
+
+  use('romgrk/barbar.nvim');
 
   use('airblade/vim-gitgutter');
 
