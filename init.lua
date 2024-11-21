@@ -27,6 +27,10 @@ vim.g.mapleader = '\\'
 vim.opt.hidden = true
 vim.opt.showtabline = 2
 
+-- Disable netrw.
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Hightlight the line where the cursor is.
 vim.opt.cursorline = true
 

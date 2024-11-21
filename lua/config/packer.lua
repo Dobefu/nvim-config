@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
   use('hrsh7th/cmp-path');
   use('hrsh7th/cmp-cmdline');
   use('hrsh7th/cmp-nvim-lsp');
+  use('hrsh7th/cmp-nvim-lua');
   use('saadparwaiz1/cmp_luasnip');
   use('ray-x/lsp_signature.nvim');
   use('L3MON4D3/LuaSnip');
@@ -50,6 +51,8 @@ return require('packer').startup(function(use)
   use('folke/which-key.nvim');
 
   use('airblade/vim-gitgutter');
+
+  use('nvim-tree/nvim-tree.lua');
 
   use({
     'nvimdev/lspsaga.nvim',
