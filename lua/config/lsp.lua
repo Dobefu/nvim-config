@@ -42,9 +42,6 @@ vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
 
-lsp.lua_ls.setup({
-  settings = { Lua = { diagnostics = { globals = { 'vim' } } } },
-})
 lsp.gopls.setup({})
 lsp.ts_ls.setup({})
 lsp.vuels.setup({})
@@ -55,6 +52,24 @@ lsp.phpactor.setup({})
 lsp.twiggy_language_server.setup({})
 lsp.html.setup({})
 lsp.diagnosticls.setup({})
+lsp.lua_ls.setup({
+  capabilities = vim.lsp.protocol.make_client_capabilities(),
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {
+          'vim'
+        },
+      },
+      workspace = {
+        library = {
+          "$VIMRUNTIME/lua/vim",
+          "$HOME/.local/share/nvim/site/pack/packer/start",
+        },
+      },
+    },
+  },
+})
 
 vim.keymap.set("n", "gd", function() telescope.lsp_definitions({ jump_type = "tab" }) end,
   { silent = true, noremap = true })

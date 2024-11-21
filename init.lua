@@ -64,10 +64,8 @@ vim.opt.wrap = true
 vim.opt.cursorcolumn = true
 
 -- Keep the current visual mode selection after indenting.
-vim.api.nvim_set_keymap('x', '<', '<gv', {})
-vim.api.nvim_set_keymap('x', '>', '>gv', {})
-
-vim.api.nvim_set_keymap('n', '<leader>t', ':belowright split term://zsh<CR>', {})
+vim.api.nvim_set_keymap('x', '<', '<gv', { desc = "Outdent" })
+vim.api.nvim_set_keymap('x', '>', '>gv', { desc = "Indent" })
 
 -- Quickly insert a dump() and place the cursor inside the function.
 vim.api.nvim_set_keymap('n', '<leader>p', 'idump();exit;<ESC>7ha', {})
