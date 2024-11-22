@@ -11,30 +11,6 @@ local capabilities = require("cmp_nvim_lsp")
 
 capabilities.default_capabilities()
 
-require('sonarlint').setup({
-  server = {
-    cmd = {
-      "sonarlint-language-server",
-      "-stdio",
-      "-analyzers",
-      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarcfamily.jar"),
-      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonargo.jar"),
-      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarhtml.jar"),
-      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonariac.jar"),
-      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjava.jar"),
-      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjavasymbolicexecution.jar"),
-      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjs.jar"),
-      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarlineomnisharp.jar"),
-      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarphp.jar"),
-      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarpython.jar"),
-      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonartext.jar"),
-      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarxml.jar"),
-    },
-  },
-  filetypes = { "c", "cpp", "csharp", "css", "docker", "go", "html", "ipython", "java", "javascript", "kubernetes", "typescript", "python", "php", "terraform", "text", "xml", "yaml" },
-  root_dir = lsp.util.root_pattern(".git"),
-})
-
 vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
@@ -66,6 +42,36 @@ lsp.lua_ls.setup({
       },
     },
   },
+})
+
+require('sonarlint').setup({
+  server = {
+    cmd = {
+      "sonarlint-language-server",
+      "-stdio",
+      "-analyzers",
+      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarcfamily.jar"),
+      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonargo.jar"),
+      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarhtml.jar"),
+      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonariac.jar"),
+      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjava.jar"),
+      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjavasymbolicexecution.jar"),
+      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjs.jar"),
+      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarlineomnisharp.jar"),
+      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarphp.jar"),
+      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarpython.jar"),
+      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonartext.jar"),
+      vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarxml.jar"),
+    },
+    settings = {
+      sonarlint = {
+        rules = {
+          ["go:S1186"] = { level = "on" },
+        },
+      },
+    },
+  },
+  filetypes = { "c", "cpp", "csharp", "css", "docker", "go", "html", "ipython", "java", "javascript", "kubernetes", "typescript", "python", "php", "terraform", "text", "xml", "yaml" },
 })
 
 vim.keymap.set("n", "gd", function() telescope.lsp_definitions({ jump_type = "tab" }) end,
