@@ -25,8 +25,15 @@ nvim_tree.setup({
   filters = {
     dotfiles = true,
   },
-  on_attach = function()
-    vim.keymap.set('n', '<enter>', function() nvim_tree_api.node.open.tab() end, {})
+  on_attach = function(bufnr)
+    -- Run the original on_attach, for the default keymaps.
+    nvim_tree_api.config.mappings.default_on_attach(bufnr)
+
+    local function opts(desc)
+      return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+
+    vim.keymap.set('n', '<CR>', function() nvim_tree_api.node.open.tab() end, opts("Open"))
   end
 })
 
