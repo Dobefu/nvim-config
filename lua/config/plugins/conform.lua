@@ -10,6 +10,7 @@ conform.setup({
     go = { "goimports", "gofmt" },
     -- php = { "phpcbf" },
     twig = { "twig-cs-fixer" },
+    markdown = { "markdown-toc" },
   },
   format_on_save = {
     timeout_ms = 500,
