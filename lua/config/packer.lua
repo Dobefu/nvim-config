@@ -56,6 +56,8 @@ return require('packer').startup(function(use)
 
   use('romgrk/barbar.nvim');
 
+  use('eoh-bse/minintro.nvim');
+
   use({
     'nvimdev/lspsaga.nvim',
     after = 'nvim-lspconfig',

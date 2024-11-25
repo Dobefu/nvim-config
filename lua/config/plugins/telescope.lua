@@ -2,24 +2,24 @@ local builtin = require('telescope.builtin')
 local actions = require("telescope.actions")
 local config = require("telescope.config")
 
-vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = "Find files" })
-vim.keymap.set('n', '<C-l>', builtin.live_grep, { desc = "Live grep" })
+local opts = {
+  hidden = true,
+  no_ignore = true,
+  no_ignore_parent = true,
+}
 
-local vimgrep_arguments = { unpack(config.values.vimgrep_arguments) }
-table.insert(vimgrep_arguments, "--hidden")
-table.insert(vimgrep_arguments, "--no-ignore-vcs")
-table.insert(vimgrep_arguments, "-g")
-table.insert(vimgrep_arguments, '!{.git,node_modules,undodir}/*')
+vim.keymap.set('n', '<C-p>', function() builtin.find_files(opts) end, { desc = "Find files" })
+vim.keymap.set('n', '<C-l>', function() builtin.live_grep(opts) end, { desc = "Live grep" })
 
 require("telescope").setup({
   defaults = {
+    prompt_prefix = " 🔍 ",
     mappings = {
       i = {
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_tab,
       },
     },
-    vimgrep_arguments = vimgrep_arguments,
     sorting_strategy = 'ascending',
     layout_config = {
       prompt_position = 'top',
@@ -27,10 +27,22 @@ require("telescope").setup({
     preview = {
       treesitter = false,
     },
+    file_ignore_patterns = {
+      "~$",
+      "undodir/",
+      ".DS_Store",
+      ".git/",
+      "swap/",
+      ".swp",
+      "node_modules/",
+      "vendor/",
+      "tempformresults/",
+      "web/modules/custom/",
+      "web/themes/custom/",
+      "coverage/",
+      ".next/",
+      ".nuxt/",
+      ".output/",
+    },
   },
-  -- pickers = {
-  --   find_files = {
-  --     find_command = { "rg", "--files", "--hidden", "--no-ignore-vcs", "--glob", "!**/.git/*", "--glob", "!**/node_modules/*", "--glob", "!**/*~$" },
-  --   }
-  -- },
 })
