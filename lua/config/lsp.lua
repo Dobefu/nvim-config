@@ -3,10 +3,10 @@ require("mason-lspconfig").setup({
   automatic_installation = true,
 })
 
-local lsp = require("lspconfig");
-local luasnip = require("luasnip");
-local telescope = require("telescope.builtin");
-local cmp = require("cmp");
+local lsp = require("lspconfig")
+local luasnip = require("luasnip")
+local telescope = require("telescope.builtin")
+local cmp = require("cmp")
 local capabilities = require("cmp_nvim_lsp")
 
 capabilities.default_capabilities()

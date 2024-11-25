@@ -47,7 +47,7 @@ vim.opt.shiftwidth = 2
 -- Enable mouse support, even in Insert mode.
 vim.opt.mouse = 'a'
 
--- Set the clipboard to the X Window clipboard.
+-- Set the clipboard to the system clipboard.
 vim.opt.clipboard = 'unnamedplus'
 
 -- Set a visual line at columns 80 and 120.
