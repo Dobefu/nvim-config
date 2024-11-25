@@ -11,7 +11,7 @@ table.insert(vimgrep_arguments, "--no-ignore-vcs")
 table.insert(vimgrep_arguments, "-g")
 table.insert(vimgrep_arguments, '!{.git,node_modules,undodir}/*')
 
-require("telescope").setup {
+require("telescope").setup({
   defaults = {
     mappings = {
       i = {
@@ -28,9 +28,9 @@ require("telescope").setup {
       treesitter = false,
     },
   },
-  pickers = {
-    find_files = {
-      find_command = { "rg", "--files", "--hidden", "--no-ignore-vcs", "--glob", "!**/.git/*", "--glob", "!**/node_modules/*" },
-    }
-  },
-}
+  -- pickers = {
+  --   find_files = {
+  --     find_command = { "rg", "--files", "--hidden", "--no-ignore-vcs", "--glob", "!**/.git/*", "--glob", "!**/node_modules/*", "--glob", "!**/*~$" },
+  --   }
+  -- },
+})

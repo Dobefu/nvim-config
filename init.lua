@@ -67,11 +67,8 @@ vim.opt.cursorcolumn = true
 vim.api.nvim_set_keymap('x', '<', '<gv', { desc = "Outdent" })
 vim.api.nvim_set_keymap('x', '>', '>gv', { desc = "Indent" })
 
--- Quickly insert a dump() and place the cursor inside the function.
-vim.api.nvim_set_keymap('n', '<leader>p', 'idump();exit;<ESC>7ha', {})
-
 -- Format JSON and enable JSON syntax highlighting for empty buffers.
-vim.api.nvim_set_keymap('n', '=j', ':%!jq .<CR>:set syntax=json<CR>', {})
+vim.api.nvim_set_keymap('n', '=j', ':%!jq .<CR>:set syntax=json<CR>', { desc = "Format JSON" })
 
 -- Git blame the current line.
 vim.api.nvim_set_keymap('n', '<C-b>', ':exec "!git blame -L " .. line(".") .. "," .. line(".") .. " %"<CR>', {})
