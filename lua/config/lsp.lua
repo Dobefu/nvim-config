@@ -29,6 +29,7 @@ lsp.dockerls.setup({})
 lsp.docker_compose_language_service.setup({})
 lsp.sqlls.setup({})
 lsp.bashls.setup({})
+lsp.eslint.setup({})
 lsp.lua_ls.setup({
   capabilities = vim.lsp.protocol.make_client_capabilities(),
   settings = {

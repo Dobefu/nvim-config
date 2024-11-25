@@ -64,42 +64,14 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {
-    lualine_a = {
-      {
-        'tabs',
-        tab_max_length = vim.o.columns / 5,
-        max_length = function() return vim.o.columns end,
-        mode = 1,
-        path = 0,
-        fmt = function(name, context)
-          local buflist = vim.fn.tabpagebuflist(context.tabnr);
-          local winnr = vim.fn.tabpagewinnr(context.tabnr);
-          local bufnr = buflist[winnr];
-          local mod = vim.fn.getbufvar(bufnr, '&mod');
-
-          local filetype = vim.fn.getbufvar(bufnr, '&filetype');
-
-          if filetype == 'javascript' then filetype = 'js' end
-          if filetype == 'make' then filetype = 'makefile' end
-          if filetype == 'typescript' then filetype = 'ts' end
-
-          local icon, color = require("nvim-web-devicons").get_icon_color(name, filetype);
-
-          if icon == nil then
-            icon = '';
-            color = colors.white;
-          end
-          return icon .. ' ' .. name .. (mod == 1 and ' ●' or '');
-        end,
-      },
-    },
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {},
-  },
+  -- tabline = {
+  --   lualine_a = {},
+  --   lualine_b = {},
+  --   lualine_c = {},
+  --   lualine_x = {},
+  --   lualine_y = {},
+  --   lualine_z = {},
+  -- },
   winbar = {},
   inactive_winbar = {},
   extensions = {}

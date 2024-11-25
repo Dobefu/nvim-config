@@ -1,2 +1,2 @@
-vim.api.nvim_set_keymap('n', 'g[', 'gT', {})
-vim.api.nvim_set_keymap('n', 'g]', 'gt', {})
+vim.api.nvim_set_keymap('n', 'g[', '<Cmd>BufferPrevious<CR>', {})
+vim.api.nvim_set_keymap('n', 'g]', '<Cmd>BufferNext<CR>', {})
