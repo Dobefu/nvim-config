@@ -1,4 +1,6 @@
-require('better-diagnostic-virtual-text').setup({
+local better_diagnostic_virtual_text = require('better-diagnostic-virtual-text')
+
+better_diagnostic_virtual_text.setup({
   ui = {
     wrap_line_after = false,
     left_kept_space = 3,

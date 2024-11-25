@@ -2,9 +2,7 @@ local barbar = require('barbar')
 
 barbar.setup({
   animation = true,
-  -- auto_hide = true,
   clickable = true,
-  -- Set the filetypes which barbar will offset itself for
   sidebar_filetypes = {
     NvimTree = true,
   },

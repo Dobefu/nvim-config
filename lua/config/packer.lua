@@ -35,12 +35,7 @@ return require('packer').startup(function(use)
   use('folke/neoconf.nvim');
   use('https://gitlab.com/schrieveslaach/sonarlint.nvim');
   use('j-hui/fidget.nvim');
-  use({
-    'sontungexpt/better-diagnostic-virtual-text',
-    config = function()
-      require('better-diagnostic-virtual-text').setup({})
-    end
-  });
+  use('sontungexpt/better-diagnostic-virtual-text');
 
   use('williamboman/mason.nvim');
   use('williamboman/mason-lspconfig.nvim');
@@ -56,15 +51,13 @@ return require('packer').startup(function(use)
 
   use('romgrk/barbar.nvim');
 
-  use('eoh-bse/minintro.nvim');
-
   use({
     'nvimdev/lspsaga.nvim',
     after = 'nvim-lspconfig',
     config = function()
       require('lspsaga').setup({})
     end,
-  });
+  })
 
   use('folke/trouble.nvim');
 
