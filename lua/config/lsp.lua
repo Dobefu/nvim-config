@@ -38,7 +38,9 @@ lsp.lua_ls.setup({
         globals = {
           'vim'
         },
+        disable = { "missing-fields" },
       },
+      telemetry = { enable = false },
       workspace = {
         library = {
           "$VIMRUNTIME/lua/vim",

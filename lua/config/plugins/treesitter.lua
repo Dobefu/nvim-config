@@ -1,4 +1,6 @@
-require 'nvim-treesitter.configs'.setup({
+local treesitter_configs = require('nvim-treesitter.configs')
+
+treesitter_configs.setup({
   ensure_installed = {
     "html",
     "php",
@@ -12,7 +14,6 @@ require 'nvim-treesitter.configs'.setup({
   },
   sync_install = false,
   auto_install = true,
-
   highlight = {
     enable = true,
     disable = function(_, buf)
