@@ -8,6 +8,8 @@ barbar.setup({
   },
 })
 
+vim.api.nvim_set_keymap('n', 'g[', '<Cmd>BufferPrevious<CR>', {})
+vim.api.nvim_set_keymap('n', 'g]', '<Cmd>BufferNext<CR>', {})
 vim.api.nvim_set_keymap(
   'n',
   '<leader>q',

@@ -39,6 +39,9 @@ return require('packer').startup(function(use)
   use('nvim-lualine/lualine.nvim')
   use('windwp/nvim-autopairs')
   use('numToStr/Comment.nvim')
+  use('mfussenegger/nvim-dap')
+  use('theHamsta/nvim-dap-virtual-text')
+  use('leoluz/nvim-dap-go')
   use({
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
