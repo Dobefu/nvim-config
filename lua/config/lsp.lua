@@ -30,6 +30,7 @@ lsp.docker_compose_language_service.setup({})
 lsp.sqlls.setup({})
 lsp.bashls.setup({})
 lsp.eslint.setup({})
+lsp.golangci_lint_ls.setup({})
 lsp.lua_ls.setup({
   capabilities = vim.lsp.protocol.make_client_capabilities(),
   settings = {
@@ -147,3 +148,7 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
     vim.opt.filetype = "yaml.docker-compose"
   end
 })
+
+-- Go to the next or previous LSP issue.
+vim.keymap.set("n", "<leader>g", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<leader>G", vim.diagnostic.goto_prev)
