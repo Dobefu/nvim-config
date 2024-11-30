@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
   use('mfussenegger/nvim-dap')
   use('theHamsta/nvim-dap-virtual-text')
   use('leoluz/nvim-dap-go')
+  use('hedyhli/outline.nvim')
   use({
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
