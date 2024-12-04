@@ -15,7 +15,18 @@ vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
 
-lsp.gopls.setup({})
+lsp.gopls.setup({
+  filetypes = {
+    "go",
+    "gomod",
+    "gowork",
+    "gohtml",
+    "gotmpl",
+    "gohtmltmpl",
+    "go.html",
+    "go.tmpl",
+  }
+})
 lsp.ts_ls.setup({})
 lsp.vuels.setup({})
 lsp.volar.setup({})
