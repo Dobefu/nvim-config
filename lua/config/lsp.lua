@@ -42,7 +42,7 @@ lsp.sqlls.setup({})
 lsp.bashls.setup({})
 lsp.eslint.setup({})
 lsp.golangci_lint_ls.setup({})
-lsp.denols.setup({})
+-- lsp.denols.setup({})
 lsp.lua_ls.setup({
   capabilities = vim.lsp.protocol.make_client_capabilities(),
   settings = {
