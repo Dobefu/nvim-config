@@ -27,7 +27,10 @@ lsp.gopls.setup({
     "go.tmpl",
   }
 })
-lsp.ts_ls.setup({})
+lsp.ts_ls.setup({
+  root_dir = lsp.util.root_pattern("package.json"),
+  single_file_support = false
+})
 lsp.vuels.setup({})
 lsp.volar.setup({})
 lsp.tailwindcss.setup({})
@@ -42,6 +45,9 @@ lsp.sqlls.setup({})
 lsp.bashls.setup({})
 lsp.eslint.setup({})
 lsp.golangci_lint_ls.setup({})
+lsp.denols.setup({
+  root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
+})
 lsp.lua_ls.setup({
   capabilities = vim.lsp.protocol.make_client_capabilities(),
   settings = {
