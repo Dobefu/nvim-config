@@ -33,3 +33,5 @@ treesitter_configs.setup({
     enable = true,
   },
 })
+
+vim.treesitter.language.register('markdown', 'mdx')

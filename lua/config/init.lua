@@ -1,4 +1,5 @@
 pcall(require, 'config.packer')
+pcall(require, 'config.filetypes')
 pcall(require, 'config.lsp')
 pcall(require, 'config.restore-cursor')
 pcall(require, 'config.aliases')
