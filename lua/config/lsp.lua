@@ -45,6 +45,7 @@ lsp.sqlls.setup({})
 lsp.bashls.setup({})
 lsp.eslint.setup({})
 lsp.golangci_lint_ls.setup({})
+lsp.svelte.setup({})
 lsp.denols.setup({
   root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
 })

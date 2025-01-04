@@ -7,6 +7,7 @@ conform.setup({
     javascriptreact = { "prettierd" },
     typescriptreact = { "prettierd" },
     vue = { "prettierd" },
+    html = { "prettierd" },
     go = { "goimports", "gofmt" },
     twig = { "twig-cs-fixer" },
     markdown = { "markdown-toc", "prettierd" },
