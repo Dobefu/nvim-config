@@ -158,6 +158,7 @@ cmp.event:on(
   cmp_autopairs.on_confirm_done()
 )
 
+-- Set Docker Compose syntax.
 local ft_lsp_group = vim.api.nvim_create_augroup("ft_lsp_group", { clear = true })
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
   pattern = { "docker-compose.yaml", "docker-compose.yml" },
