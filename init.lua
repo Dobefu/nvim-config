@@ -6,7 +6,7 @@ require('config')
 
 vim.opt.shell = '/bin/sh'
 
--- Set Viminfo file location
+-- Set Viminfo file location.
 vim.opt.shada:append('n' .. config_dir .. '/main.shada')
 
 -- Enable undo history files.
