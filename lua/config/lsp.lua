@@ -49,6 +49,7 @@ lsp.svelte.setup({})
 lsp.mdx_analyzer.setup({})
 lsp.java_language_server.setup({})
 lsp.gradle_ls.setup({})
+lsp.jdtls.setup({})
 lsp.denols.setup({
   root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
 })
