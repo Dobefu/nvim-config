@@ -28,3 +28,11 @@ codecompanion.setup({
     end,
   },
 })
+
+-- Open the CodeCompanion chat.
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>c',
+  '<Cmd>CodeCompanionChat<CR>',
+  { noremap = true, silent = true, desc = "Open a CodeCompanion chat window" }
+)
