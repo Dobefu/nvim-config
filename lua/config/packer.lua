@@ -59,7 +59,11 @@ return require('packer').startup(function(use)
     'MeanderingProgrammer/render-markdown.nvim',
     after = { 'nvim-treesitter' },
     requires = { 'echasnovski/mini.nvim', opt = true },
-    ft = { "markdown", "mdx", "codecompanion" },
+    config = function()
+      require('render-markdown').setup({
+        file_types = { 'markdown', 'mdx', 'codecompanion' },
+      })
+    end,
   })
   use({
     'olimorris/codecompanion.nvim',
