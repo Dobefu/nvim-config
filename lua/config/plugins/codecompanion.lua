@@ -10,12 +10,12 @@ codecompanion.setup({
     },
   },
   adapters = {
-    codellama = function()
+    ollama_default = function()
       return require("codecompanion.adapters").extend("ollama", {
-        name = "codellama",
+        name = "ollama_default",
         schema = {
           model = {
-            default = "codellama:70b",
+            default = "mixtral:8x7b",
           },
           num_ctx = {
             default = 16384,
@@ -33,6 +33,6 @@ codecompanion.setup({
 vim.api.nvim_set_keymap(
   'n',
   '<leader>c',
-  '<Cmd>CodeCompanionChat<CR>',
+  '<Cmd>CodeCompanionChat ollama_default<CR>',
   { noremap = true, silent = true, desc = "Open a CodeCompanion chat window" }
 )

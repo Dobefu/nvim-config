@@ -56,18 +56,16 @@ return require('packer').startup(function(use)
     end,
   })
   use({
+    'MeanderingProgrammer/render-markdown.nvim',
+    after = { 'nvim-treesitter' },
+    requires = { 'echasnovski/mini.nvim', opt = true },
+    ft = { "markdown", "mdx", "codecompanion" },
+  })
+  use({
     'olimorris/codecompanion.nvim',
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
     }
-  })
-  use({
-    'MeanderingProgrammer/render-markdown.nvim',
-    after = { 'nvim-treesitter' },
-    requires = { 'echasnovski/mini.nvim', opt = true },
-    config = function()
-      require('render-markdown').setup({})
-    end,
   })
 end)
