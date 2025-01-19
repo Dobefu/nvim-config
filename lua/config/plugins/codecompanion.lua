@@ -10,12 +10,12 @@ codecompanion.setup({
     },
   },
   adapters = {
-    llama3 = function()
+    codellama = function()
       return require("codecompanion.adapters").extend("ollama", {
-        name = "mixtral",
+        name = "codellama",
         schema = {
           model = {
-            default = "mixtral:latest",
+            default = "codellama:70b",
           },
           num_ctx = {
             default = 16384,
