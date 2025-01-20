@@ -15,7 +15,7 @@ codecompanion.setup({
         name = "ollama_default",
         schema = {
           model = {
-            default = "mixtral:8x7b",
+            default = "llama3:8b",
           },
           num_ctx = {
             default = 16384,
