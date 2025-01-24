@@ -1,6 +1,11 @@
 local codecompanion = require("codecompanion")
 
 codecompanion.setup({
+  display = {
+    chat = {
+      show_header_separator = false,
+    },
+  },
   strategies = {
     chat = {
       adapter = "ollama",
