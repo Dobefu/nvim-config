@@ -15,7 +15,7 @@ codecompanion.setup({
         name = "ollama_default",
         schema = {
           model = {
-            default = "llama3:8b",
+            default = "deepseek-r1:8b",
           },
           num_ctx = {
             default = 16384,
