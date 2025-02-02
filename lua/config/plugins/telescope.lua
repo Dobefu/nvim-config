@@ -1,6 +1,6 @@
-local telescope = require("telescope")
+local telescope = require('telescope')
 local builtin = require('telescope.builtin')
-local actions = require("telescope.actions")
+local actions = require('telescope.actions')
 
 local opts = {
   hidden = true,
@@ -12,6 +12,14 @@ vim.keymap.set('n', '<C-p>', function() builtin.find_files(opts) end, { desc = "
 vim.keymap.set('n', '<C-l>', function() builtin.live_grep(opts) end, { desc = "Live grep" })
 
 telescope.setup({
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    }
+  },
   defaults = {
     prompt_prefix = " 🔍 ",
     mappings = {
@@ -48,3 +56,5 @@ telescope.setup({
     },
   },
 })
+
+telescope.load_extension('fzf')
