@@ -4,7 +4,6 @@ local actions = require('telescope.actions')
 
 local opts = {
   hidden = true,
-  no_ignore = true,
   no_ignore_parent = true,
 }
 
@@ -44,6 +43,8 @@ telescope.setup({
       ".swp$",
       ".png$",
       ".jpg$",
+      ".gif$",
+      ".ico$",
       "node_modules/",
       "vendor/",
       "tempformresults/",
