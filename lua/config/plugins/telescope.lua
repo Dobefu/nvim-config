@@ -43,6 +43,7 @@ telescope.setup({
       ".swp$",
       ".png$",
       ".jpg$",
+      ".jpeg$",
       ".gif$",
       ".ico$",
       "node_modules/",
