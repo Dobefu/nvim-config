@@ -1,3 +1,4 @@
+local telescope = require("telescope")
 local builtin = require('telescope.builtin')
 local actions = require("telescope.actions")
 
@@ -10,7 +11,7 @@ local opts = {
 vim.keymap.set('n', '<C-p>', function() builtin.find_files(opts) end, { desc = "Find files" })
 vim.keymap.set('n', '<C-l>', function() builtin.live_grep(opts) end, { desc = "Live grep" })
 
-require("telescope").setup({
+telescope.setup({
   defaults = {
     prompt_prefix = " 🔍 ",
     mappings = {
@@ -32,7 +33,9 @@ require("telescope").setup({
       ".DS_Store",
       ".git/",
       "swap/",
-      ".swp",
+      ".swp$",
+      ".png$",
+      ".jpg$",
       "node_modules/",
       "vendor/",
       "tempformresults/",
