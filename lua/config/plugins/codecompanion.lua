@@ -30,26 +30,31 @@ codecompanion.setup({
     },
   },
   adapters = {
-    ollama_default = function()
-      return require("codecompanion.adapters").extend("ollama", {
-        name = "ollama_default",
-        schema = {
-          model = {
-            default = "deepseek-r1:8b",
-          },
-          num_ctx = {
-            default = 16384,
-          },
-          num_predict = {
-            default = -1,
-          },
+    ollama = function()
+      return require("codecompanion.adapters").extend("openai_compatible", {
+        env = {
+          url = "http://127.0.0.1:1234",
+          chat_url = "/v1/chat/completions",
         },
       })
+      -- return require("codecompanion.adapters").extend("ollama", {
+      --   name = "ollama_default",
+      --   schema = {
+      --     model = {
+      --       default = "deepseek-r1:8b",
+      --     },
+      --     num_ctx = {
+      --       default = 16384,
+      --     },
+      --     num_predict = {
+      --       default = -1,
+      --     },
+      --   },
+      -- })
     end,
   },
 })
 
--- Open the CodeCompanion chat.
 vim.api.nvim_set_keymap(
   'n',
   '<leader>a',
