@@ -37,20 +37,6 @@ codecompanion.setup({
           chat_url = "/v1/chat/completions",
         },
       })
-      -- return require("codecompanion.adapters").extend("ollama", {
-      --   name = "ollama_default",
-      --   schema = {
-      --     model = {
-      --       default = "deepseek-r1:8b",
-      --     },
-      --     num_ctx = {
-      --       default = 16384,
-      --     },
-      --     num_predict = {
-      --       default = -1,
-      --     },
-      --   },
-      -- })
     end,
   },
 })
