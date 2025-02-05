@@ -4,6 +4,21 @@ codecompanion.setup({
   display = {
     chat = {
       show_header_separator = false,
+      window = {
+        layout = "vertical",
+        position = "left",
+        relative = "editor",
+      },
+    },
+    action_palette = {
+      width = 95,
+      height = 10,
+      prompt = "Prompt ",
+      provider = "telescope",
+      opts = {
+        show_default_actions = true,
+        show_default_prompt_library = true,
+      },
     },
   },
   strategies = {
@@ -37,7 +52,14 @@ codecompanion.setup({
 -- Open the CodeCompanion chat.
 vim.api.nvim_set_keymap(
   'n',
-  '<leader>c',
-  '<Cmd>CodeCompanionChat ollama_default<CR>',
+  '<leader>a',
+  '<Cmd>CodeCompanionActions<CR>',
   { noremap = true, silent = true, desc = "Open a CodeCompanion chat window" }
+)
+
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>c',
+  '<Cmd>CodeCompanionChat Toggle<CR>',
+  { noremap = true, silent = true, desc = "Toggle a CodeCompanion window" }
 )
