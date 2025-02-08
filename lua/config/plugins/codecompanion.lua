@@ -11,7 +11,7 @@ codecompanion.setup({
       },
     },
     action_palette = {
-      width = 95,
+      width = 90,
       height = 10,
       prompt = "Prompt ",
       provider = "telescope",
