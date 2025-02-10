@@ -5,6 +5,7 @@ local actions = require('telescope.actions')
 local opts = {
   hidden = true,
   no_ignore_parent = true,
+  follow = true,
 }
 
 vim.keymap.set('n', '<C-p>', function() builtin.find_files(opts) end, { desc = "Find files" })
