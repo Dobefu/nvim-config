@@ -30,9 +30,6 @@ treesitter_configs.setup({
   indent = {
     enable = true,
   },
-  autotag = {
-    enable = true,
-  },
 })
 
 vim.treesitter.language.register('markdown', 'mdx')

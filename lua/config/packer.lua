@@ -45,6 +45,11 @@ return require('packer').startup(function(use)
   use('hedyhli/outline.nvim')
   use('RRethy/vim-illuminate')
   use('windwp/nvim-ts-autotag')
+  use('rcarriga/nvim-notify')
+  use({
+    'folke/noice.nvim',
+    requires = { { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' } }
+  })
   use({
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
