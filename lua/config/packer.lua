@@ -43,6 +43,8 @@ return require('packer').startup(function(use)
   use('theHamsta/nvim-dap-virtual-text')
   use('leoluz/nvim-dap-go')
   use('hedyhli/outline.nvim')
+  use('RRethy/vim-illuminate')
+  use('windwp/nvim-ts-autotag')
   use({
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
