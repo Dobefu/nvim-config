@@ -76,4 +76,8 @@ return require('packer').startup(function(use)
       "nvim-treesitter/nvim-treesitter",
     }
   })
+  use({
+    'glacambre/firenvim',
+    run = ':call firenvim#install(0)',
+  })
 end)
