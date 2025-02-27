@@ -27,12 +27,74 @@ lsp.gopls.setup({
     "go.tmpl",
   }
 })
-lsp.ts_ls.setup({
+lsp.tsserver.setup({
   root_dir = lsp.util.root_pattern("package.json"),
-  single_file_support = false
+  single_file_support = false,
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location =
+            vim.fn.expand(
+              "$MASON/packages/vue-language-server/node_modules/@vue/language-server"),
+        languages = { "javascript", "typescript", "vue" },
+      },
+    },
+  },
+  settings = {
+    typescript = {
+      inlayHints = {
+        includeInlayParameterNameHints = "all",
+        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHints = true,
+        includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayEnumMemberValueHints = true,
+      },
+    },
+  },
 })
-lsp.vuels.setup({})
-lsp.volar.setup({})
+lsp.volar.setup({
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+  root_dir = lsp.util.root_pattern(
+    "vue.config.js",
+    "vue.config.ts",
+    "nuxt.config.js",
+    "nuxt.config.ts"
+  ),
+  init_options = {
+    vue = {
+      hybridMode = false,
+    },
+    typescript = {
+      tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
+    },
+  },
+  settings = {
+    typescript = {
+      inlayHints = {
+        enumMemberValues = {
+          enabled = true,
+        },
+        functionLikeReturnTypes = {
+          enabled = true,
+        },
+        propertyDeclarationTypes = {
+          enabled = true,
+        },
+        parameterTypes = {
+          enabled = true,
+          suppressWhenArgumentMatchesName = true,
+        },
+        variableTypes = {
+          enabled = true,
+        },
+      },
+    },
+  },
+})
 lsp.tailwindcss.setup({})
 lsp.vimls.setup({})
 lsp.phpactor.setup({})
