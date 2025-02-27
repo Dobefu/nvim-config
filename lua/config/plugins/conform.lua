@@ -6,6 +6,7 @@ conform.setup({
     typescript      = { "prettierd" },
     javascriptreact = { "prettierd" },
     typescriptreact = { "prettierd" },
+    json            = { "prettierd" },
     vue             = { "prettierd" },
     html            = { "prettierd" },
     css             = { "prettierd" },

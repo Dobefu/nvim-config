@@ -125,7 +125,9 @@ lsp.dockerls.setup({})
 lsp.docker_compose_language_service.setup({})
 lsp.sqlls.setup({})
 lsp.bashls.setup({})
-lsp.eslint.setup({})
+lsp.eslint.setup({
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue", "svelte", "astro", "json" }
+})
 lsp.golangci_lint_ls.setup({})
 lsp.svelte.setup({})
 lsp.mdx_analyzer.setup({})
