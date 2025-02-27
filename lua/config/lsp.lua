@@ -1,6 +1,26 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
   automatic_installation = true,
+  ensure_installed = {
+    "bashls",
+    "denols",
+    "diagnosticls",
+    "docker_compose_language_service",
+    "dockerls",
+    "eslint",
+    "golangci_lint_ls",
+    "graphql",
+    "html",
+    "lua_ls",
+    "mdx_analyzer",
+    "svelte",
+    "tailwindcss",
+    "twiggy_language_server",
+    "ts_ls",
+    "vimls",
+    "volar",
+    "yamlls",
+  }
 })
 
 local lsp = require("lspconfig")
@@ -27,7 +47,7 @@ lsp.gopls.setup({
     "go.tmpl",
   }
 })
-lsp.tsserver.setup({
+lsp.ts_ls.setup({
   root_dir = lsp.util.root_pattern("package.json"),
   single_file_support = false,
   init_options = {
@@ -112,6 +132,7 @@ lsp.mdx_analyzer.setup({})
 lsp.java_language_server.setup({})
 lsp.gradle_ls.setup({})
 lsp.jdtls.setup({})
+lsp.yamlls.setup({})
 lsp.denols.setup({
   root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
 })
