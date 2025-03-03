@@ -21,4 +21,8 @@ noice.setup({
     inc_rename = false,
     lsp_doc_border = false,
   },
+  routes = {
+    { filter = { event = "notify", find = "SonarQube language server is ready" }, view = "mini" },
+    { filter = { event = "msg_show", kind = "", find = "written" },               view = "mini" },
+  },
 })
