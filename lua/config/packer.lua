@@ -81,6 +81,7 @@ return require('packer').startup(function(use)
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "folke/noice.nvim",
     }
   })
 end)
