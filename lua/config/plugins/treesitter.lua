@@ -4,6 +4,7 @@ treesitter_configs.setup({
   ensure_installed = {
     "html",
     "php",
+    "phpdoc",
     "javascript",
     "typescript",
     "c",

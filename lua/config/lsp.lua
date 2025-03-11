@@ -117,6 +117,7 @@ lsp.volar.setup({
 })
 lsp.tailwindcss.setup({})
 lsp.vimls.setup({})
+lsp.intelephense.setup({})
 lsp.phpactor.setup({})
 lsp.twiggy_language_server.setup({})
 lsp.html.setup({})
