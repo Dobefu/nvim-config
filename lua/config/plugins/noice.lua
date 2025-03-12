@@ -4,6 +4,12 @@ noice.setup({
   cmdline = {
     view = "cmdline",
   },
+  messages = {
+    view = "mini",
+  },
+  hover = {
+    enabled = false,
+  },
   lsp = {
     override = {
       ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -29,5 +35,6 @@ noice.setup({
     { filter = { event = "msg_show", kind = "", find = "changes; before" },          view = "mini" },
     { filter = { event = "msg_show", kind = "", find = "change; after" },            view = "mini" },
     { filter = { event = "msg_show", kind = "", find = "changes; after" },           view = "mini" },
+    { filter = { event = "msg_show", kind = "emsg", find = "Pattern not found" },    view = "mini" },
   },
 })
