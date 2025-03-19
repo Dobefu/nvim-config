@@ -47,6 +47,11 @@ return require('packer').startup(function(use)
   use('windwp/nvim-ts-autotag')
   use('rcarriga/nvim-notify')
   use({
+    'Davidyz/VectorCode',
+    dependencies = { "nvim-lua/plenary.nvim" },
+    run = "pipx install vectorcode && pipx upgrade vectorcode",
+  })
+  use({
     'folke/noice.nvim',
     requires = { { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' } }
   })
