@@ -35,6 +35,7 @@ vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
 
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 lsp.gopls.setup({
   filetypes = {
     "go",
@@ -117,7 +118,15 @@ lsp.volar.setup({
 })
 lsp.tailwindcss.setup({})
 lsp.vimls.setup({})
-lsp.intelephense.setup({})
+lsp.intelephense.setup({
+  settings = {
+    intelephense = {
+      format = {
+        enable = false
+      }
+    }
+  }
+})
 lsp.phpactor.setup({})
 lsp.twiggy_language_server.setup({})
 lsp.html.setup({})
