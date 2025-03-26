@@ -144,6 +144,9 @@ lsp.twiggy_language_server.setup({})
 lsp.html.setup({})
 lsp.cssls.setup({
   capabilities = lsp_capabilities,
+  init_options = {
+    provideFormatter = false,
+  },
 })
 lsp.css_variables.setup({})
 lsp.diagnosticls.setup({})
