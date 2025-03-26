@@ -3,6 +3,7 @@ require("mason-lspconfig").setup({
   automatic_installation = true,
   ensure_installed = {
     "bashls",
+    "cssls",
     "denols",
     "diagnosticls",
     "docker_compose_language_service",
@@ -130,6 +131,7 @@ lsp.intelephense.setup({
 lsp.phpactor.setup({})
 lsp.twiggy_language_server.setup({})
 lsp.html.setup({})
+lsp.cssls.setup({})
 lsp.diagnosticls.setup({})
 lsp.dockerls.setup({})
 lsp.docker_compose_language_service.setup({})
