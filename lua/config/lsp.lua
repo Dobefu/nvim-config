@@ -4,6 +4,7 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "bashls",
     "cssls",
+    "css_variables",
     "denols",
     "diagnosticls",
     "docker_compose_language_service",
@@ -28,9 +29,19 @@ local lsp = require("lspconfig")
 local luasnip = require("luasnip")
 local telescope = require("telescope.builtin")
 local cmp = require("cmp")
-local capabilities = require("cmp_nvim_lsp")
 
+local capabilities = require("cmp_nvim_lsp")
 capabilities.default_capabilities()
+
+local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
+lsp_capabilities.textDocument.completion.completionItem.snippetSupport = true
+lsp_capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    "documentation",
+    "detail",
+    "additionalTextEdits",
+  }
+}
 
 vim.g.markdown_fenced_languages = {
   "ts=typescript"
@@ -131,7 +142,10 @@ lsp.intelephense.setup({
 lsp.phpactor.setup({})
 lsp.twiggy_language_server.setup({})
 lsp.html.setup({})
-lsp.cssls.setup({})
+lsp.cssls.setup({
+  capabilities = lsp_capabilities,
+})
+lsp.css_variables.setup({})
 lsp.diagnosticls.setup({})
 lsp.dockerls.setup({})
 lsp.docker_compose_language_service.setup({})
