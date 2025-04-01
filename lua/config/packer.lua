@@ -78,11 +78,19 @@ return require('packer').startup(function(use)
     end,
   })
   use({
-    'olimorris/codecompanion.nvim',
+    'yetone/avante.nvim',
+    branch = 'main',
+    run = 'make',
     requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "folke/noice.nvim",
-    }
+      'nvim-treesitter/nvim-treesitter',
+      'stevearc/dressing.nvim',
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require('avante_lib').load()
+      require('avante').setup()
+    end
   })
 end)
