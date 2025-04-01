@@ -88,9 +88,5 @@ return require('packer').startup(function(use)
       'MunifTanjim/nui.nvim',
       'nvim-tree/nvim-web-devicons',
     },
-    config = function()
-      require('avante_lib').load()
-      require('avante').setup()
-    end
   })
 end)
