@@ -17,8 +17,10 @@ avante.setup({
       __inherited_from = 'openai',
       api_key_name = '',
       endpoint = 'http://127.0.0.1:1234/v1',
-      model = 'gregbarbosa/deepseek-coder-v2-lite-instruct-mlx',
     },
+  },
+  behaviour = {
+    auto_suggestions = true,
   },
   -- rag_service = {
   --   enabled = true,
