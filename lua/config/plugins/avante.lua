@@ -19,9 +19,6 @@ avante.setup({
       endpoint = 'http://127.0.0.1:1234/v1',
     },
   },
-  behaviour = {
-    auto_suggestions = true,
-  },
   -- rag_service = {
   --   enabled = true,
   --   host_mount = os.getenv('HOME'),
