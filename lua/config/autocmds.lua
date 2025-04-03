@@ -1,9 +1,3 @@
--- auto-compile LaTeX.
-vim.api.nvim_create_autocmd('bufWritePost', {
-  pattern = '*.tex',
-  callback = function() vim.cmd('!xelatex %') end
-})
-
 -- Custom settings for C code.
 vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
   pattern = '*.{c,h,s,asm,cpp}',

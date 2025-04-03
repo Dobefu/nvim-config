@@ -55,6 +55,7 @@ lsp.gopls.setup({
     "gowork",
     "gohtml",
     "gotmpl",
+    "gotexttmpl",
     "gohtmltmpl",
     "go.html",
     "go.tmpl",

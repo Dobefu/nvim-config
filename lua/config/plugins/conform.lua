@@ -9,6 +9,7 @@ conform.setup({
     json            = { "prettierd" },
     vue             = { "prettierd" },
     html            = { "prettierd" },
+    gohtmltmpl      = { "prettierd" },
     css             = { "prettierd" },
     go              = { "goimports", "gofmt" },
     twig            = { "twig-cs-fixer" },

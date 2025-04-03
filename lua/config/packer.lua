@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
   use('windwp/nvim-ts-autotag')
   use('rcarriga/nvim-notify')
   use('christoomey/vim-tmux-navigator')
+  use('ray-x/go.nvim')
   use({
     'folke/noice.nvim',
     requires = { { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' } }
