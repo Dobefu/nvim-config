@@ -12,7 +12,7 @@ conform.setup({
     gohtmltmpl      = { "prettierd" },
     css             = { "prettierd" },
     go              = { "goimports", "gofmt" },
-    twig            = { "twig-cs-fixer" },
+    -- twig            = { "twig-cs-fixer" },
     markdown        = { "markdown-toc", "prettierd" },
     groovy          = { "npm-groovy-lint" },
   },
