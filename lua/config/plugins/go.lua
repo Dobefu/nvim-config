@@ -1,3 +1,5 @@
 local go = require('go')
 
-go.setup()
+go.setup({
+  trouble = true,
+})
