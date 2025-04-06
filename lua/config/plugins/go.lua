@@ -2,4 +2,5 @@ local go = require('go')
 
 go.setup({
   trouble = true,
+  luasnip = true,
 })
