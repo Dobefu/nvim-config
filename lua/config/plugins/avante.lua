@@ -19,12 +19,12 @@ avante.setup({
       endpoint = 'http://127.0.0.1:1234/v1',
     },
   },
-  -- rag_service = {
-  --   enabled = true,
-  --   host_mount = os.getenv('HOME'),
-  --   provider = 'local_server',
-  --   llm_model = '',
-  --   embed_model = '',
-  --   endpoint = 'https://api.groq.com/openai/v1',
-  -- },
+  rag_service = {
+    enabled = true,
+    host_mount = os.getenv('HOME'),
+    provider = 'local_server',
+    llm_model = '',
+    embed_model = '',
+    endpoint = 'https://api.groq.com/openai/v1',
+  },
 })
