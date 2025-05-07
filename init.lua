@@ -69,6 +69,3 @@ vim.api.nvim_set_keymap('x', '>', '>gv', { desc = "Indent" })
 
 -- Format JSON and enable JSON syntax highlighting for empty buffers.
 vim.api.nvim_set_keymap('n', '=j', ':%!jq .<CR>:set syntax=json<CR>', { desc = "Format JSON" })
-
--- Git blame the current line.
-vim.api.nvim_set_keymap('n', '<C-b>', ':exec "!git blame -L " .. line(".") .. "," .. line(".") .. " %"<CR>', {})

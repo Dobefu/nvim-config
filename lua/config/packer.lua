@@ -49,6 +49,7 @@ return require('packer').startup(function(use)
   use('christoomey/vim-tmux-navigator')
   use('ray-x/go.nvim')
   use('ray-x/guihua.lua')
+  use('FabijanZulj/blame.nvim')
   use({
     'folke/noice.nvim',
     requires = { { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' } }
