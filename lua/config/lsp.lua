@@ -1,4 +1,14 @@
-require("mason").setup()
+local mason = require("mason")
+local lsp = require("lspconfig")
+local luasnip = require("luasnip")
+local telescope = require("telescope.builtin")
+local cmp = require("cmp")
+local sonarlint = require('sonarlint')
+
+local capabilities = require("cmp_nvim_lsp")
+capabilities.default_capabilities()
+
+mason.setup()
 require("mason-lspconfig").setup({
   automatic_installation = true,
   ensure_installed = {
@@ -24,14 +34,6 @@ require("mason-lspconfig").setup({
     "yamlls",
   }
 })
-
-local lsp = require("lspconfig")
-local luasnip = require("luasnip")
-local telescope = require("telescope.builtin")
-local cmp = require("cmp")
-
-local capabilities = require("cmp_nvim_lsp")
-capabilities.default_capabilities()
 
 local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
 lsp_capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -189,7 +191,7 @@ lsp.lua_ls.setup({
   },
 })
 
-require('sonarlint').setup({
+sonarlint.setup({
   server = {
     cmd = {
       "sonarlint-language-server",
