@@ -34,6 +34,7 @@ vim.g.loaded_netrwPlugin = 1
 -- Hightlight the line where the cursor is.
 vim.opt.cursorline = true
 
+-- Enable relative line numbers.
 vim.opt.number = true
 vim.opt.relativenumber = true
 
