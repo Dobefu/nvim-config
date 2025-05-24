@@ -30,7 +30,6 @@ require("mason-lspconfig").setup({
     "twiggy_language_server",
     "ts_ls",
     "vimls",
-    "volar",
     "yamlls",
   }
 })
