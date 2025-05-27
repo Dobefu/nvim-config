@@ -12,5 +12,5 @@ codesnap.setup({
 })
 
 vim.api.nvim_create_user_command('Screenshot', function()
-	codesnap.copy_into_clipboard()
+	codesnap.copy_into_clipboard(),
 end, { range = true })
