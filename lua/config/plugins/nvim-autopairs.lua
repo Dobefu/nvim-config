@@ -7,7 +7,7 @@ autopairs.setup({
     lua = { 'string' },
     javascript = { 'template_string' },
     java = false,
-  }
+  },
 })
 
 local ts_conds = require('nvim-autopairs.ts-conds')
