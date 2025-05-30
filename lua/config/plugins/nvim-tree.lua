@@ -28,12 +28,12 @@ nvim_tree.setup({
 })
 
 nvim_tree_api.events.subscribe(nvim_tree_api.events.Event.FileCreated, function(file)
-  vim.cmd("edit " .. vim.fn.fnameescape(file.fname)),
+  vim.cmd("edit " .. vim.fn.fnameescape(file.fname))
 end)
 
 vim.keymap.set(
   'n',
   '<C-t>',
   function() nvim_tree_api.tree.toggle({ find_file = true }) end,
-  { desc = "Open Nvim Tree" },
+  { desc = "Open Nvim Tree" }
 )
