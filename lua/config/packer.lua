@@ -51,6 +51,10 @@ return require('packer').startup(function(use)
   use('ray-x/guihua.lua')
   use('FabijanZulj/blame.nvim')
   use({
+    'pcolladosoto/tinygo.nvim',
+    config = function() require("tinygo").setup() end
+  })
+  use({
     'folke/noice.nvim',
     requires = { { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' } }
   })

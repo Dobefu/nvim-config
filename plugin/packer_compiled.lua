@@ -306,6 +306,12 @@ _G.packer_plugins = {
     path = "/Users/dobefu/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tinygo.nvim"] = {
+    config = { "\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vtinygo\frequire\0" },
+    loaded = true,
+    path = "/Users/dobefu/.local/share/nvim/site/pack/packer/start/tinygo.nvim",
+    url = "https://github.com/pcolladosoto/tinygo.nvim"
+  },
   ["transparent.nvim"] = {
     loaded = true,
     path = "/Users/dobefu/.local/share/nvim/site/pack/packer/start/transparent.nvim",
@@ -344,6 +350,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: tinygo.nvim
+time([[Config for tinygo.nvim]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vtinygo\frequire\0", "config", "tinygo.nvim")
+time([[Config for tinygo.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
