@@ -4,6 +4,8 @@ local luasnip = require("luasnip")
 local telescope = require("telescope.builtin")
 local cmp = require("cmp")
 local sonarlint = require('sonarlint')
+local ft_lsp_group = vim.api.nvim_create_augroup("ft_lsp_group", { clear = true })
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 local capabilities = require("cmp_nvim_lsp")
 capabilities.default_capabilities()
@@ -271,14 +273,12 @@ cmp.setup({
   },
 })
 
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on(
   'confirm_done',
   cmp_autopairs.on_confirm_done()
 )
 
 -- Set Docker Compose syntax.
-local ft_lsp_group = vim.api.nvim_create_augroup("ft_lsp_group", { clear = true })
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
   pattern = { "docker-compose.yaml", "docker-compose.yml" },
   group = ft_lsp_group,
