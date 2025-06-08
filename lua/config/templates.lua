@@ -9,3 +9,9 @@ vim.api.nvim_create_autocmd('BufNewFile', {
   pattern = '*.tsx',
   callback = function() vim.cmd('0r ~/.config/nvim/templates/skeleton.tsx') end
 })
+
+-- Use a template for new HTML files.
+vim.api.nvim_create_autocmd('BufNewFile', {
+  pattern = '*.html',
+  callback = function() vim.cmd('0r ~/.config/nvim/templates/skeleton.html') end
+})
