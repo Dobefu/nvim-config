@@ -21,3 +21,9 @@ vim.api.nvim_create_autocmd('BufNewFile', {
   pattern = '*.sh',
   callback = function() vim.cmd('0r ~/.config/nvim/templates/skeleton.sh') end
 })
+
+-- Use a template for new PHP files.
+vim.api.nvim_create_autocmd('BufNewFile', {
+  pattern = '*.php',
+  callback = function() vim.cmd('0r ~/.config/nvim/templates/skeleton.php') end
+})
