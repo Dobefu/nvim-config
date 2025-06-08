@@ -1,4 +1,5 @@
 local mason = require("mason")
+local mason_lspconfig = require("mason-lspconfig")
 local lsp = require("lspconfig")
 local luasnip = require("luasnip")
 local telescope = require("telescope.builtin")
@@ -11,7 +12,7 @@ local capabilities = require("cmp_nvim_lsp")
 capabilities.default_capabilities()
 
 mason.setup()
-require("mason-lspconfig").setup({
+mason_lspconfig.setup({
   automatic_installation = true,
   ensure_installed = {
     "bashls",
