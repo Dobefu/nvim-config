@@ -15,3 +15,9 @@ vim.api.nvim_create_autocmd('BufNewFile', {
   pattern = '*.html',
   callback = function() vim.cmd('0r ~/.config/nvim/templates/skeleton.html') end
 })
+
+-- Use a template for new shell scripts.
+vim.api.nvim_create_autocmd('BufNewFile', {
+  pattern = '*.sh',
+  callback = function() vim.cmd('0r ~/.config/nvim/templates/skeleton.sh') end
+})
