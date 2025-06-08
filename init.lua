@@ -1,5 +1,6 @@
 local config_dir = vim.fn.stdpath('config')
 
+-- Set custom colour scheme.
 vim.cmd [[colorscheme custom]]
 
 require('config')
