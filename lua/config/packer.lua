@@ -80,7 +80,7 @@ return require('packer').startup(function(use)
     requires = { 'echasnovski/mini.nvim', opt = true },
     config = function()
       require('render-markdown').setup({
-        file_types = { 'markdown', 'mdx', 'codecompanion' },
+        file_types = { 'markdown', 'mdx' },
       })
     end,
   })
