@@ -14,5 +14,5 @@ vim.api.nvim_set_keymap(
   'n',
   '<leader>q',
   '<Cmd>BufferClose<CR>',
-  { noremap = true, silent = true, desc = "Close the current buffer" }
+  { noremap = true, silent = true, desc = 'Close the current buffer' }
 )
