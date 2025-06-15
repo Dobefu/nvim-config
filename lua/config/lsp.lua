@@ -215,12 +215,12 @@ sonarlint.setup({
 		settings = {
 			sonarlint = {
 				rules = {
-					["go:S1186"] = { level = "on" },
+					['go:S1186'] = { level = 'on' },
 				},
 			},
 		},
 	},
-	filetypes = { "c", "cpp", "csharp", "css", "docker", "go", "html", "ipython", "java", "javascript", "kubernetes", "typescript", "python", "php", "terraform", "text", "xml", "yaml" },
+	filetypes = { 'c', 'cpp', 'csharp', 'css', 'docker', 'go', 'html', 'ipython', 'java', 'javascript', 'kubernetes', 'typescript', 'python', 'php', 'terraform', 'text', 'xml', 'yaml' },
 })
 
 vim.keymap.set("n", "gd", function() telescope.lsp_definitions({ jump_type = "tab" }) end,
