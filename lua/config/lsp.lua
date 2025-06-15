@@ -1,6 +1,5 @@
 local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
-local lsp = require('lspconfig')
 local luasnip = require('luasnip')
 local telescope = require('telescope.builtin')
 local cmp = require('cmp')
