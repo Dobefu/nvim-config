@@ -2,6 +2,7 @@ local noice = require('noice')
 
 noice.setup({
   cmdline = {
+    enabled = true,
     view = 'cmdline',
   },
   messages = {
@@ -9,6 +10,10 @@ noice.setup({
     view = 'mini',
     view_error = 'mini',
     view_warn = 'mini',
+  },
+  popupmenu = {
+    enabled = true,
+    backend = 'cmp',
   },
   notify = {
     view = 'mini',
