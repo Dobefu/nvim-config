@@ -6,7 +6,7 @@ local capabilities = cmp_nvim_lsp.default_capabilities(
 )
 
 go.setup({
-  gopls_cmd = "gopls",
+  gopls_cmd = 'gopls',
   run_in_floaterm = true,
   trouble = true,
   luasnip = true,
