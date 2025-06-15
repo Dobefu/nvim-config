@@ -223,7 +223,7 @@ sonarlint.setup({
 	filetypes = { 'c', 'cpp', 'csharp', 'css', 'docker', 'go', 'html', 'ipython', 'java', 'javascript', 'kubernetes', 'typescript', 'python', 'php', 'terraform', 'text', 'xml', 'yaml' },
 })
 
-vim.keymap.set("n", "gd", function() telescope.lsp_definitions({ jump_type = "tab" }) end,
+vim.keymap.set('n', 'gd', function() telescope.lsp_definitions({ jump_type = 'tab' }) end,
 	{ silent = true, noremap = true })
 
 vim.diagnostic.config({
@@ -280,12 +280,12 @@ cmp.event:on(
 )
 
 -- Set Docker Compose syntax.
-vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
-	pattern = { "docker-compose.yaml", "docker-compose.yml" },
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
+	pattern = { 'docker-compose.yaml', 'docker-compose.yml' },
 	group = ft_lsp_group,
-	desc = "Fix the issue where the LSP does not start with docker-compose.",
+	desc = 'Fix the issue where the LSP does not start with docker-compose.',
 	callback = function()
-		vim.opt.filetype = "yaml.docker-compose"
+		vim.opt.filetype = 'yaml.docker-compose'
 	end
 })
 
