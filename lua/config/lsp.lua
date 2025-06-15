@@ -53,7 +53,8 @@ vim.g.markdown_fenced_languages = {
 }
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
-lsp.gopls.setup({
+vim.lsp.enable('gopls')
+vim.lsp.config('gopls', {
   filetypes = {
     'go',
     'gomod',
@@ -66,7 +67,9 @@ lsp.gopls.setup({
     'go.tmpl',
   }
 })
-lsp.ts_ls.setup({
+
+vim.lsp.enable('ts_ls')
+vim.lsp.config('ts_ls', {
   root_dir = lsp.util.root_pattern('package.json'),
   single_file_support = false,
   init_options = {
@@ -95,7 +98,9 @@ lsp.ts_ls.setup({
     },
   },
 })
-lsp.volar.setup({
+
+vim.lsp.enable('vue_ls')
+vim.lsp.config('vue_ls', {
   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
   root_dir = lsp.util.root_pattern(
     'vue.config.js',
@@ -134,9 +139,13 @@ lsp.volar.setup({
     },
   },
 })
-lsp.tailwindcss.setup({})
-lsp.vimls.setup({})
-lsp.intelephense.setup({
+
+vim.lsp.enable('tailwindcss')
+
+vim.lsp.enable('vimls')
+
+vim.lsp.enable('intelephense')
+vim.lsp.config('intelephense', {
   settings = {
     intelephense = {
       format = {
@@ -145,18 +154,27 @@ lsp.intelephense.setup({
     }
   }
 })
-lsp.phpactor.setup({})
-lsp.twiggy_language_server.setup({})
-lsp.html.setup({})
-lsp.cssls.setup({
+
+vim.lsp.enable('phpactor')
+
+vim.lsp.enable('twiggy_language_server')
+
+vim.lsp.enable('html')
+
+vim.lsp.enable('cssls')
+vim.lsp.config('cssls', {
   capabilities = lsp_capabilities,
   init_options = {
     provideFormatter = false,
   },
 })
-lsp.css_variables.setup({})
-lsp.diagnosticls.setup({})
-lsp.dockerls.setup({})
+
+vim.lsp.enable('css_variables')
+
+vim.lsp.enable('diagnosticls')
+
+vim.lsp.enable('dockerls')
+
 lsp.docker_compose_language_service.setup({})
 lsp.sqlls.setup({})
 lsp.bashls.setup({})
