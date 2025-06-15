@@ -1,3 +1,3 @@
-local transparent = require("transparent")
+local transparent = require('transparent')
 
 transparent.setup({})
