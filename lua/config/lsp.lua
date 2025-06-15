@@ -181,20 +181,32 @@ vim.lsp.enable('sqlls')
 
 vim.lsp.enable('bashls')
 
-lsp.eslint.setup({
+vim.lsp.enable('eslint')
+vim.lsp.config('eslint', {
   filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx', 'vue', 'svelte', 'astro', 'json' }
 })
-lsp.golangci_lint_ls.setup({})
-lsp.svelte.setup({})
-lsp.mdx_analyzer.setup({})
-lsp.java_language_server.setup({})
-lsp.gradle_ls.setup({})
-lsp.jdtls.setup({})
-lsp.yamlls.setup({})
-lsp.denols.setup({
+
+vim.lsp.enable('golangci_lint_ls')
+
+vim.lsp.enable('svelte')
+
+vim.lsp.enable('mdx_analyzer')
+
+vim.lsp.enable('java_language_server')
+
+vim.lsp.enable('gradle_ls')
+
+vim.lsp.enable('jdtls')
+
+vim.lsp.enable('yamlls')
+
+vim.lsp.enable('denols')
+vim.lsp.config('denols', {
   root_dir = lsp.util.root_pattern('deno.json', 'deno.jsonc'),
 })
-lsp.lua_ls.setup({
+
+vim.lsp.enable('lua_ls')
+vim.lsp.config('lua_ls', {
   capabilities = vim.lsp.protocol.make_client_capabilities(),
   settings = {
     Lua = {
