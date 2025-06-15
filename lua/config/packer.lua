@@ -52,7 +52,7 @@ return require('packer').startup(function(use)
   use('FabijanZulj/blame.nvim')
   use({
     'pcolladosoto/tinygo.nvim',
-    config = function() require("tinygo").setup() end
+    config = function() require('tinygo').setup() end
   })
   use({
     'folke/noice.nvim',
