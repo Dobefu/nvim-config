@@ -23,7 +23,10 @@ require('lazy').setup({
     {
       'nvim-treesitter/nvim-treesitter',
       branch = 'master',
-      lazy = false,
+      event = {
+        "BufReadPost",
+        "BufNewFile",
+      },
       build = ':TSUpdate',
     },
     {
@@ -34,8 +37,25 @@ require('lazy').setup({
       'mistricky/codesnap.nvim',
       build = 'make',
     },
-    'neovim/nvim-lspconfig',
-    'hrsh7th/nvim-cmp',
+    {
+      'neovim/nvim-lspconfig',
+      event = {
+        'BufReadPre',
+        'BufNewFile',
+      },
+      dependencies = {
+        'mason-org/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+      },
+    },
+    {
+      'hrsh7th/nvim-cmp',
+      event = 'InsertEnter',
+      dependencies = {
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+      },
+    },
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
@@ -58,10 +78,13 @@ require('lazy').setup({
       'sontungexpt/better-diagnostic-virtual-text',
       lazy = true,
     },
-    'williamboman/mason.nvim',
+    {
+      'mason-org/mason.nvim',
+      lazy = true,
+    },
     {
       'mason-org/mason-lspconfig.nvim',
-      opts = {},
+      lazy = true,
       dependencies = {
         { 'mason-org/mason.nvim', opts = {} },
         'neovim/nvim-lspconfig',
@@ -74,6 +97,7 @@ require('lazy').setup({
     },
     {
       'folke/which-key.nvim',
+      lazy = true,
       event = 'VeryLazy',
       keys = {
         {
@@ -96,6 +120,7 @@ require('lazy').setup({
     },
     {
       'romgrk/barbar.nvim',
+      lazy = true,
       dependencies = {
         'lewis6991/gitsigns.nvim',
         'nvim-tree/nvim-web-devicons',
@@ -103,6 +128,7 @@ require('lazy').setup({
     },
     {
       'folke/trouble.nvim',
+      lazy = true,
       cmd = 'Trouble',
       keys = {
         {
@@ -146,8 +172,14 @@ require('lazy').setup({
       event = 'InsertEnter',
       config = true,
     },
-    'numToStr/Comment.nvim',
-    'mfussenegger/nvim-dap',
+    {
+      'numToStr/Comment.nvim',
+      event = 'InsertEnter',
+    },
+    {
+      'mfussenegger/nvim-dap',
+      lazy = true,
+    },
     'theHamsta/nvim-dap-virtual-text',
     'leoluz/nvim-dap-go',
     {
@@ -179,13 +211,19 @@ require('lazy').setup({
     },
     {
       'ray-x/go.nvim',
+      lazy = true,
       dependencies = {
         'ray-x/guihua.lua',
         'neovim/nvim-lspconfig',
         'nvim-treesitter/nvim-treesitter',
       },
-      event = { 'CmdlineEnter' },
-      ft = { 'go', 'gomod' },
+      event = {
+        'CmdlineEnter',
+      },
+      ft = {
+        'go',
+        'gomod',
+      },
       build = ':lua require("go.install").update_all_sync()',
     },
     {
@@ -194,14 +232,15 @@ require('lazy').setup({
     },
     {
       'pcolladosoto/tinygo.nvim',
-      config = function() require('tinygo').setup() end,
       event = 'VeryLazy',
+      config = function() require('tinygo').setup() end,
     },
     {
       'folke/noice.nvim',
       event = 'VeryLazy',
       dependencies = {
         'MunifTanjim/nui.nvim',
+        'rcarriga/nvim-notify',
       }
     },
     {
@@ -214,6 +253,9 @@ require('lazy').setup({
     {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'make',
+      dependencies = {
+        'nvim-telescope/telescope.nvim',
+      },
     },
     {
       'nvimdev/lspsaga.nvim',
@@ -227,6 +269,7 @@ require('lazy').setup({
     },
     {
       'MeanderingProgrammer/render-markdown.nvim',
+      lazy = true,
       dependencies = {
         'nvim-treesitter/nvim-treesitter',
         'nvim-tree/nvim-web-devicons',
