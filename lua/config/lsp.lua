@@ -97,17 +97,17 @@ lsp.ts_ls.setup({
 lsp.volar.setup({
 	filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 	root_dir = lsp.util.root_pattern(
-		"vue.config.js",
-		"vue.config.ts",
-		"nuxt.config.js",
-		"nuxt.config.ts"
+		'vue.config.js',
+		'vue.config.ts',
+		'nuxt.config.js',
+		'nuxt.config.ts'
 	),
 	init_options = {
 		vue = {
 			hybridMode = false,
 		},
 		typescript = {
-			tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
+			tsdk = vim.fn.getcwd() .. '/node_modules/typescript/lib',
 		},
 	},
 	settings = {
@@ -160,7 +160,7 @@ lsp.docker_compose_language_service.setup({})
 lsp.sqlls.setup({})
 lsp.bashls.setup({})
 lsp.eslint.setup({
-	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue", "svelte", "astro", "json" }
+	filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx', 'vue', 'svelte', 'astro', 'json' }
 })
 lsp.golangci_lint_ls.setup({})
 lsp.svelte.setup({})
