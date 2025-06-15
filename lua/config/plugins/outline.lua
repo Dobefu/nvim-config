@@ -11,6 +11,3 @@ outline.setup({
     },
   },
 })
-
-vim.keymap.set('n', '<leader>o', ':Outline<CR>', { desc = 'Toggle Outline' })
-vim.keymap.set('n', '<leader>O', ':Outline!<CR>', { desc = 'Toggle Outline without focus' })

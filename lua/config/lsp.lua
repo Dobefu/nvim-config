@@ -136,6 +136,8 @@ vim.lsp.enable('tailwindcss')
 
 vim.lsp.enable('vimls')
 
+vim.lsp.enable('jsonls')
+
 vim.lsp.enable('intelephense')
 vim.lsp.config('intelephense', {
   settings = {
