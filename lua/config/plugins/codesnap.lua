@@ -2,7 +2,7 @@ local codesnap = require('codesnap')
 
 codesnap.setup({
 	watermark = '',
-	bg_color = "#535c68",
+	bg_color = '#535c68',
 	has_breadcrumbs = true,
 	has_line_number = false,
 	show_workspace = true,
@@ -12,5 +12,5 @@ codesnap.setup({
 })
 
 vim.api.nvim_create_user_command('Screenshot', function()
-	codesnap.copy_into_clipboard(),
+	codesnap.copy_into_clipboard()
 end, { range = true })
