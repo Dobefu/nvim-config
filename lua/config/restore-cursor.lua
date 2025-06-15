@@ -1,8 +1,8 @@
 vim.api.nvim_create_autocmd('bufReadPost', {
   pattern = '*',
   callback = function()
-    local line = vim.fn.line("'\"")
-    local column = vim.fn.col("'\"")
+    local line = vim.fn.line('\'"')
+    local column = vim.fn.col('\'"')
 
     if
         line > 1 and line <= vim.fn.line('$') and
