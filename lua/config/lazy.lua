@@ -19,7 +19,10 @@ vim.g.maplocalleader = '\\'
 
 require('lazy').setup({
   spec = {
-    'airblade/vim-rooter',
+    {
+      'airblade/vim-rooter',
+      lazy = false,
+    },
     {
       'nvim-treesitter/nvim-treesitter',
       branch = 'master',
@@ -75,9 +78,18 @@ require('lazy').setup({
         end,
       },
     },
-    'folke/neoconf.nvim',
-    'https://gitlab.com/schrieveslaach/sonarlint.nvim',
-    'j-hui/fidget.nvim',
+    {
+      'folke/neoconf.nvim',
+      lazy = false,
+    },
+    {
+      'https://gitlab.com/schrieveslaach/sonarlint.nvim',
+      event = 'VeryLazy',
+    },
+    {
+      'j-hui/fidget.nvim',
+      lazy = true,
+    },
     {
       'sontungexpt/better-diagnostic-virtual-text',
       lazy = true,
@@ -94,7 +106,10 @@ require('lazy').setup({
         'neovim/nvim-lspconfig',
       },
     },
-    'stevearc/conform.nvim',
+    {
+      'stevearc/conform.nvim',
+      event = 'VeryLazy',
+    },
     {
       'xiyaowong/transparent.nvim',
       lazy = false,
@@ -113,7 +128,10 @@ require('lazy').setup({
         },
       },
     },
-    'lewis6991/gitsigns.nvim',
+    {
+      'lewis6991/gitsigns.nvim',
+      lazy = true,
+    },
     {
       'nvim-tree/nvim-tree.lua',
       version = '*',
@@ -184,8 +202,14 @@ require('lazy').setup({
       'mfussenegger/nvim-dap',
       lazy = true,
     },
-    'theHamsta/nvim-dap-virtual-text',
-    'leoluz/nvim-dap-go',
+    {
+      'theHamsta/nvim-dap-virtual-text',
+      lazy = true,
+    },
+    {
+      'leoluz/nvim-dap-go',
+      lazy = true,
+    },
     {
       'hedyhli/outline.nvim',
       config = function()
@@ -193,8 +217,14 @@ require('lazy').setup({
         vim.keymap.set('n', '<leader>O', ':Outline!<CR>', { desc = 'Toggle Outline without focus' })
       end,
     },
-    'RRethy/vim-illuminate',
-    'windwp/nvim-ts-autotag',
+    {
+      'RRethy/vim-illuminate',
+      lazy = true,
+    },
+    {
+      'windwp/nvim-ts-autotag',
+      lazy = true,
+    },
     {
       'christoomey/vim-tmux-navigator',
       cmd = {
