@@ -101,12 +101,6 @@ vim.lsp.config('ts_ls', {
 vim.lsp.enable('vue_ls')
 vim.lsp.config('vue_ls', {
   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-  root_dir = lsp.util.root_pattern(
-    'vue.config.js',
-    'vue.config.ts',
-    'nuxt.config.js',
-    'nuxt.config.ts'
-  ),
   init_options = {
     vue = {
       hybridMode = false,
