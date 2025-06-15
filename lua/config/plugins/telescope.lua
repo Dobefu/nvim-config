@@ -8,8 +8,8 @@ local opts = {
   follow = true,
 }
 
-vim.keymap.set('n', '<C-p>', function() builtin.find_files(opts) end, { desc = "Find files" })
-vim.keymap.set('n', '<C-o>', function() builtin.live_grep(opts) end, { desc = "Live grep" })
+vim.keymap.set('n', '<C-p>', function() builtin.find_files(opts) end, { desc = 'Find files' })
+vim.keymap.set('n', '<C-o>', function() builtin.live_grep(opts) end, { desc = 'Live grep' })
 
 telescope.setup({
   extensions = {
@@ -17,15 +17,15 @@ telescope.setup({
       fuzzy = true,
       override_generic_sorter = true,
       override_file_sorter = true,
-      case_mode = "smart_case",
+      case_mode = 'smart_case',
     }
   },
   defaults = {
-    prompt_prefix = " 🔍 ",
+    prompt_prefix = ' 🔍 ',
     mappings = {
       i = {
-        ["<esc>"] = actions.close,
-        ["<CR>"] = actions.select_tab,
+        ['<esc>'] = actions.close,
+        ['<CR>'] = actions.select_tab,
       },
     },
     sorting_strategy = 'ascending',
@@ -36,26 +36,26 @@ telescope.setup({
       treesitter = false,
     },
     file_ignore_patterns = {
-      "~$",
-      "undodir/",
-      ".DS_Store",
-      ".git/",
-      "swap/",
-      ".swp$",
-      ".png$",
-      ".jpg$",
-      ".jpeg$",
-      ".gif$",
-      ".ico$",
-      "node_modules/",
-      "vendor/",
-      "tempformresults/",
-      "web/modules/contrib/",
-      "web/themes/contrib/",
-      "coverage/",
-      ".next/",
-      ".nuxt/",
-      ".output/",
+      '~$',
+      'undodir/',
+      '.DS_Store',
+      '.git/',
+      'swap/',
+      '.swp$',
+      '.png$',
+      '.jpg$',
+      '.jpeg$',
+      '.gif$',
+      '.ico$',
+      'node_modules/',
+      'vendor/',
+      'tempformresults/',
+      'web/modules/contrib/',
+      'web/themes/contrib/',
+      'coverage/',
+      '.next/',
+      '.nuxt/',
+      '.output/',
     },
   },
 })
