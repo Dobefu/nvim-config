@@ -41,14 +41,14 @@ local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
 lsp_capabilities.textDocument.completion.completionItem.snippetSupport = true
 lsp_capabilities.textDocument.completion.completionItem.resolveSupport = {
 	properties = {
-		"documentation",
-		"detail",
-		"additionalTextEdits",
+		'documentation',
+		'detail',
+		'additionalTextEdits',
 	}
 }
 
 vim.g.markdown_fenced_languages = {
-	"ts=typescript"
+	'ts=typescript'
 }
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
