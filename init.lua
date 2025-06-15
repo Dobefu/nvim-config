@@ -39,7 +39,7 @@ vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = 'yes'
 
 -- Set the indents to two spaces.
 vim.opt.expandtab = true
@@ -66,8 +66,8 @@ vim.opt.wrap = true
 vim.opt.cursorcolumn = true
 
 -- Keep the current visual mode selection after indenting.
-vim.api.nvim_set_keymap('x', '<', '<gv', { desc = "Outdent" })
-vim.api.nvim_set_keymap('x', '>', '>gv', { desc = "Indent" })
+vim.api.nvim_set_keymap('x', '<', '<gv', { desc = 'Outdent' })
+vim.api.nvim_set_keymap('x', '>', '>gv', { desc = 'Indent' })
 
 -- Format JSON and enable JSON syntax highlighting for empty buffers.
-vim.api.nvim_set_keymap('n', '=j', ':%!jq .<CR>:set syntax=json<CR>', { desc = "Format JSON" })
+vim.api.nvim_set_keymap('n', '=j', ':%!jq .<CR>:set syntax=json<CR>', { desc = 'Format JSON' })
