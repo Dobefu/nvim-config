@@ -18,19 +18,26 @@ noice.setup({
   notify = {
     view = 'mini',
   },
-  hover = {
-    enabled = false,
-  },
   all = {
     view = 'cmdline',
   },
   lsp = {
+    progress = {
+      enabled = true,
+      view = 'mini',
+    },
     override = {
       ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
       ['vim.lsp.util.stylize_markdown'] = true,
       ['cmp.entry.get_documentation'] = false,
     },
+    hover = {
+      enabled = false,
+    },
     signature = {
+      enabled = false,
+    },
+    message = {
       enabled = false,
     },
   },
