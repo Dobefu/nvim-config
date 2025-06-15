@@ -1,5 +1,8 @@
 local config_dir = vim.fn.stdpath('config')
 
+-- Enable the Lua module loader, to reduce startup time.
+vim.loader.enable(true)
+
 -- Set custom colour scheme.
 vim.cmd [[colorscheme custom]]
 
