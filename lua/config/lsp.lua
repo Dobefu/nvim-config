@@ -175,9 +175,12 @@ vim.lsp.enable('diagnosticls')
 
 vim.lsp.enable('dockerls')
 
-lsp.docker_compose_language_service.setup({})
-lsp.sqlls.setup({})
-lsp.bashls.setup({})
+vim.lsp.enable('docker_compose_language_service')
+
+vim.lsp.enable('sqlls')
+
+vim.lsp.enable('bashls')
+
 lsp.eslint.setup({
   filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx', 'vue', 'svelte', 'astro', 'json' }
 })
