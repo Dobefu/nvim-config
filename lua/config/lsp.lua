@@ -170,7 +170,7 @@ lsp.gradle_ls.setup({})
 lsp.jdtls.setup({})
 lsp.yamlls.setup({})
 lsp.denols.setup({
-	root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
+	root_dir = lsp.util.root_pattern('deno.json', 'deno.jsonc'),
 })
 lsp.lua_ls.setup({
 	capabilities = vim.lsp.protocol.make_client_capabilities(),
@@ -180,13 +180,13 @@ lsp.lua_ls.setup({
 				globals = {
 					'vim'
 				},
-				disable = { "missing-fields" },
+				disable = { 'missing-fields' },
 			},
 			telemetry = { enable = false },
 			workspace = {
 				library = {
-					"$VIMRUNTIME/lua/vim",
-					"$HOME/.local/share/nvim/site/pack/packer/start",
+					'$VIMRUNTIME/lua/vim',
+					'$HOME/.local/share/nvim/site/pack/packer/start',
 				},
 			},
 		},
