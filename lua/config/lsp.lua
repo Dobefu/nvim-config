@@ -66,23 +66,23 @@ lsp.gopls.setup({
 	}
 })
 lsp.ts_ls.setup({
-	root_dir = lsp.util.root_pattern("package.json"),
+	root_dir = lsp.util.root_pattern('package.json'),
 	single_file_support = false,
 	init_options = {
 		plugins = {
 			{
-				name = "@vue/typescript-plugin",
+				name = '@vue/typescript-plugin',
 				location =
 				    vim.fn.expand(
-					    "$MASON/packages/vue-language-server/node_modules/@vue/language-server"),
-				languages = { "javascript", "typescript", "vue" },
+					    '$MASON/packages/vue-language-server/node_modules/@vue/language-server'),
+				languages = { 'javascript', 'typescript', 'vue' },
 			},
 		},
 	},
 	settings = {
 		typescript = {
 			inlayHints = {
-				includeInlayParameterNameHints = "all",
+				includeInlayParameterNameHints = 'all',
 				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
 				includeInlayFunctionParameterTypeHints = true,
 				includeInlayVariableTypeHints = true,
