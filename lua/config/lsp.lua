@@ -290,5 +290,5 @@ vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
 })
 
 -- Go to the next or previous LSP issue.
-vim.keymap.set("n", "<leader>g", vim.diagnostic.goto_next, { desc = "Go to next LSP issue" })
-vim.keymap.set("n", "<leader>G", vim.diagnostic.goto_prev, { desc = "Go to previous LSP issue" })
+vim.keymap.set('n', '<leader>g', vim.diagnostic.goto_next, { desc = 'Go to next LSP issue' })
+vim.keymap.set('n', '<leader>G', vim.diagnostic.goto_prev, { desc = 'Go to previous LSP issue' })
