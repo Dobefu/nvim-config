@@ -41,6 +41,9 @@ noice.setup({
       enabled = false,
     },
   },
+  health = {
+    checker = false,
+  },
   presets = {
     bottom_search = true,
     command_palette = true,
