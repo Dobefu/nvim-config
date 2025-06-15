@@ -186,8 +186,7 @@ require('lazy').setup({
       },
       event = { 'CmdlineEnter' },
       ft = { 'go', 'gomod' },
-      build =
-      ':lua require("go.install").update_all_sync()'
+      build = ':lua require("go.install").update_all_sync()',
     },
     {
       'FabijanZulj/blame.nvim',
@@ -195,7 +194,8 @@ require('lazy').setup({
     },
     {
       'pcolladosoto/tinygo.nvim',
-      config = function() require('tinygo').setup() end
+      config = function() require('tinygo').setup() end,
+      event = 'VeryLazy',
     },
     {
       'folke/noice.nvim',
