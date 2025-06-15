@@ -13,6 +13,7 @@ treesitter_configs.setup({
     'vue',
     'tsx',
     'markdown',
+    'regex',
   },
   sync_install = false,
   auto_install = true,
