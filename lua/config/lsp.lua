@@ -195,6 +195,10 @@ vim.lsp.enable('jdtls')
 vim.lsp.enable('yamlls')
 
 vim.lsp.enable('denols')
+vim.lsp.config('denols', {
+  filetypes = { 'javascript', 'typescript' },
+  root_markers = { 'deno.json', 'deno.jsonc' },
+})
 
 vim.lsp.enable('lua_ls')
 vim.lsp.config('lua_ls', {
