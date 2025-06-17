@@ -311,7 +311,7 @@ require('lazy').setup({
       opts = {
         file_types = { 'markdown', 'mdx' },
       },
-    }
+    },
   },
   checker = { enabled = true },
 })
