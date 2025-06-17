@@ -4,6 +4,7 @@ treesitter_configs.setup({
   ensure_installed = {
     'c',
     'comment',
+    'css',
     'go',
     'gomod',
     'gosum',
