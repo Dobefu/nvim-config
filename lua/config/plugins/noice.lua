@@ -13,7 +13,7 @@ noice.setup({
   },
   popupmenu = {
     enabled = true,
-    backend = 'cmp',
+    backend = 'nui',
   },
   notify = {
     view = 'mini',
@@ -29,16 +29,16 @@ noice.setup({
     override = {
       ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
       ['vim.lsp.util.stylize_markdown'] = true,
-      ['cmp.entry.get_documentation'] = false,
+      ['cmp.entry.get_documentation'] = true,
     },
     hover = {
-      enabled = false,
+      enabled = true,
     },
     signature = {
-      enabled = false,
+      enabled = true,
     },
     message = {
-      enabled = false,
+      enabled = true,
     },
   },
   health = {
