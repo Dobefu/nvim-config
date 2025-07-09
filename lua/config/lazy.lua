@@ -274,7 +274,6 @@ require('lazy').setup({
       event = 'VeryLazy',
       dependencies = {
         'MunifTanjim/nui.nvim',
-        'rcarriga/nvim-notify',
       }
     },
     {
