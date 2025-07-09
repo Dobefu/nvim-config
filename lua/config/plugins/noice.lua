@@ -51,13 +51,4 @@ noice.setup({
     inc_rename = false,
     lsp_doc_border = false,
   },
-  routes = {
-    { filter = { event = 'notify', find = 'SonarQube language server is ready' },    view = 'mini' },
-    { filter = { event = 'msg_show', kind = '', find = 'written' },                  view = 'mini' },
-    { filter = { event = 'msg_show', kind = '', find = 'Already at oldest change' }, view = 'mini' },
-    { filter = { event = 'msg_show', kind = '', find = 'change; before' },           view = 'mini' },
-    { filter = { event = 'msg_show', kind = '', find = 'changes; before' },          view = 'mini' },
-    { filter = { event = 'msg_show', kind = '', find = 'change; after' },            view = 'mini' },
-    { filter = { event = 'msg_show', kind = '', find = 'changes; after' },           view = 'mini' },
-  },
 })
