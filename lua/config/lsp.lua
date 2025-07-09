@@ -283,8 +283,12 @@ sonarlint.setup({
   },
 })
 
-vim.keymap.set('n', 'gd', function() telescope.lsp_definitions({ jump_type = 'tab' }) end,
-  { silent = true, noremap = true })
+vim.keymap.set(
+  'n',
+  'gd',
+  function() telescope.lsp_definitions({ jump_type = 'tab' }) end,
+  { silent = true, noremap = true }
+)
 
 vim.diagnostic.config({
   virtual_text = true,
