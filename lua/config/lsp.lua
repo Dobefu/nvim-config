@@ -84,7 +84,7 @@ vim.lsp.config('ts_ls', {
   settings = {
     typescript = {
       inlayHints = {
-        includeInlayParameterNameHints = 'all',
+        includeInlayParameterNameHints = 'none',
         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
         includeInlayFunctionParameterTypeHints = false,
         includeInlayVariableTypeHints = false,
