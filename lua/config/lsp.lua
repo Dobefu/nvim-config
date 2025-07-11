@@ -68,7 +68,7 @@ vim.lsp.config('gopls', {
     'gohtmltmpl',
     'go.html',
     'go.tmpl',
-  }
+  },
 })
 
 vim.lsp.enable('ts_ls')
@@ -251,12 +251,9 @@ sonarlint.setup({
       vim.fn.expand('$MASON/share/sonarlint-analyzers/sonargo.jar'),
       vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarhtml.jar'),
       vim.fn.expand('$MASON/share/sonarlint-analyzers/sonariac.jar'),
-      vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarjava.jar'),
-      vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarjavasymbolicexecution.jar'),
       vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarjs.jar'),
       vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarlineomnisharp.jar'),
       vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarphp.jar'),
-      vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarpython.jar'),
       vim.fn.expand('$MASON/share/sonarlint-analyzers/sonartext.jar'),
       vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarxml.jar'),
     },
