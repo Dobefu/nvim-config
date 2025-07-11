@@ -52,6 +52,10 @@ vim.g.markdown_fenced_languages = {
 }
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+vim.lsp.config('*', {
+  root_markers = { '.git' },
+})
+
 vim.lsp.enable('gopls')
 vim.lsp.config('gopls', {
   filetypes = {
