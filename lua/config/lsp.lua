@@ -79,15 +79,13 @@ vim.lsp.enable('ts_ls')
 vim.lsp.config('ts_ls', {
   single_file_support = false,
   init_options = {
-    plugins = {
-      {
-        name = '@vue/typescript-plugin',
-        location = vim.fn.expand(
-          '$MASON/packages/vue-language-server/node_modules/@vue/language-server'
-        ),
-        languages = { 'javascript', 'typescript', 'vue' },
-      },
-    },
+    plugins = { {
+      name = '@vue/typescript-plugin',
+      location = vim.fn.expand(
+        '$MASON/packages/vue-language-server/node_modules/@vue/language-server'
+      ),
+      languages = { 'javascript', 'typescript', 'vue' },
+    } },
   },
   settings = {
     typescript = {
