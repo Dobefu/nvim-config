@@ -191,7 +191,18 @@ vim.lsp.enable('bashls')
 
 vim.lsp.enable('eslint')
 vim.lsp.config('eslint', {
-  filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx', 'vue', 'svelte', 'astro', 'json' }
+  filetypes = {
+    'javascript',
+    'javascriptreact',
+    'javascript.jsx',
+    'typescript',
+    'typescriptreact',
+    'typescript.tsx',
+    'vue',
+    'svelte',
+    'astro',
+    'json',
+  }
 })
 
 vim.lsp.enable('golangci_lint_ls')
