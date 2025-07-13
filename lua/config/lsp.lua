@@ -76,32 +76,37 @@ vim.lsp.config('gopls', {
 })
 
 vim.lsp.enable('ts_ls')
-vim.lsp.config('ts_ls', {
-  single_file_support = false,
-  init_options = {
-    plugins = { {
-      name = '@vue/typescript-plugin',
-      location = vim.fn.expand(
-        '$MASON/packages/vue-language-server/node_modules/@vue/language-server'
-      ),
-      languages = { 'javascript', 'typescript', 'vue' },
-    } },
-  },
-  settings = {
-    typescript = {
-      inlayHints = {
-        includeInlayParameterNameHints = 'none',
-        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-        includeInlayFunctionParameterTypeHints = false,
-        includeInlayVariableTypeHints = false,
-        includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-        includeInlayPropertyDeclarationTypeHints = false,
-        includeInlayFunctionLikeReturnTypeHints = false,
-        includeInlayEnumMemberValueHints = false,
+vim.lsp.config(
+  'ts_ls',
+  {
+    single_file_support = false,
+    init_options = {
+      plugins = {
+        {
+          name = '@vue/typescript-plugin',
+          location = vim.fn.expand(
+            '$MASON/packages/vue-language-server/node_modules/@vue/language-server'
+          ),
+          languages = { 'javascript', 'typescript', 'vue' },
+        },
       },
     },
-  },
-})
+    settings = {
+      typescript = {
+        inlayHints = {
+          includeInlayParameterNameHints = 'none',
+          includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+          includeInlayFunctionParameterTypeHints = false,
+          includeInlayVariableTypeHints = false,
+          includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+          includeInlayPropertyDeclarationTypeHints = false,
+          includeInlayFunctionLikeReturnTypeHints = false,
+          includeInlayEnumMemberValueHints = false,
+        },
+      },
+    },
+  }
+)
 
 vim.lsp.enable('vue_ls')
 vim.lsp.config('vue_ls', {
