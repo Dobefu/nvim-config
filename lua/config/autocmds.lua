@@ -9,3 +9,9 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
   pattern = '*.{module,theme,install,test,inc,profile,view}',
   callback = function() vim.cmd('set filetype=php') end
 })
+
+-- Disable inlay hints globally.
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  pattern = '*',
+  callback = function() vim.lsp.inlay_hint.enable(false) end
+})

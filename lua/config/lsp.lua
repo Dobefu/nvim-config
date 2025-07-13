@@ -10,9 +10,6 @@ local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local capabilities = require('cmp_nvim_lsp')
 capabilities.default_capabilities()
 
--- Disable inlay hints globally.
-vim.lsp.inlay_hint.enable(false)
-
 mason.setup()
 mason_lspconfig.setup({
   automatic_installation = true,
