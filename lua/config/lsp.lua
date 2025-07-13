@@ -4,8 +4,12 @@ local luasnip = require('luasnip')
 local telescope = require('telescope.builtin')
 local cmp = require('cmp')
 local sonarlint = require('sonarlint')
-local ft_lsp_group = vim.api.nvim_create_augroup('ft_lsp_group', { clear = true })
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+
+local ft_lsp_group = vim.api.nvim_create_augroup(
+  'ft_lsp_group',
+  { clear = true }
+)
 
 local capabilities = require('cmp_nvim_lsp')
 capabilities.default_capabilities()
