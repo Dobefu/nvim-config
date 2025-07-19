@@ -27,9 +27,12 @@ nvim_tree.setup({
   },
 })
 
-nvim_tree_api.events.subscribe(nvim_tree_api.events.Event.FileCreated, function(file)
-  vim.cmd('edit ' .. vim.fn.fnameescape(file.fname))
-end)
+nvim_tree_api.events.subscribe(
+  nvim_tree_api.events.Event.FileCreated,
+  function(file)
+    vim.cmd('edit ' .. vim.fn.fnameescape(file.fname))
+  end
+)
 
 vim.keymap.set(
   'n',
