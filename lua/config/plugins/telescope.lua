@@ -8,8 +8,18 @@ local opts = {
   follow = true,
 }
 
-vim.keymap.set('n', '<C-p>', function() builtin.find_files(opts) end, { desc = 'Find files' })
-vim.keymap.set('n', '<C-o>', function() builtin.live_grep(opts) end, { desc = 'Live grep' })
+vim.keymap.set(
+  'n',
+  '<C-p>',
+  function() builtin.find_files(opts) end,
+  { desc = 'Find files' }
+)
+vim.keymap.set(
+  'n',
+  '<C-o>',
+  function() builtin.live_grep(opts) end,
+  { desc = 'Live grep' }
+)
 
 telescope.setup({
   extensions = {
