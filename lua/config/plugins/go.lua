@@ -11,5 +11,14 @@ go.setup({
   luasnip = true,
   lsp_cfg = {
     capabilities = capabilities,
-  }
+  },
+  golangci_lint = {
+    default = 'standard',
+    enable = {
+      'govet',
+      'ineffassign',
+      'revive',
+      'gosimple',
+    },
+  },
 })
