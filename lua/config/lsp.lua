@@ -32,6 +32,7 @@ mason_lspconfig.setup({
     'jsonls',
     'lua_ls',
     'mdx_analyzer',
+    'revive',
     'svelte',
     'tailwindcss',
     'ts_ls',
