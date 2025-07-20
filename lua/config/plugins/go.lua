@@ -18,7 +18,6 @@ go.setup({
       'govet',
       'ineffassign',
       'revive',
-      'gosimple',
     },
   },
 })
