@@ -11,7 +11,6 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 })
 
 -- Disable inlay hints globally.
-vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = '*',
+vim.api.nvim_create_autocmd('LspAttach', {
   callback = function() vim.lsp.inlay_hint.enable(false) end
 })
