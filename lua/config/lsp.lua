@@ -209,6 +209,18 @@ vim.lsp.config('eslint', {
 })
 
 vim.lsp.enable('golangci_lint_ls')
+vim.lsp.config('golangci_lint_ls', {
+  init_options = {
+    command = {
+      'golangci-lint',
+      'run',
+      '--output.json.path=stdout',
+      '--show-stats=false',
+      '--enable',
+      'govet,ineffassign,revive',
+    },
+  },
+})
 
 vim.lsp.enable('svelte')
 
