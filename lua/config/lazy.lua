@@ -161,6 +161,7 @@ require('lazy').setup({
     {
       'folke/trouble.nvim',
       lazy = true,
+      opts = {},
       cmd = 'Trouble',
       keys = {
         {
@@ -272,6 +273,9 @@ require('lazy').setup({
         'neovim/nvim-lspconfig',
         'nvim-treesitter/nvim-treesitter',
       },
+      opts = {
+        lsp_keymaps = false,
+      },
       event = {
         'CmdlineEnter',
       },
@@ -288,14 +292,14 @@ require('lazy').setup({
     {
       'pcolladosoto/tinygo.nvim',
       event = 'VeryLazy',
-      config = function() require('tinygo').setup() end,
+      config = function() require('tinygo').setup({}) end,
     },
     {
       'folke/noice.nvim',
       event = 'VeryLazy',
       dependencies = {
         'MunifTanjim/nui.nvim',
-      }
+      },
     },
     {
       'nvim-telescope/telescope.nvim',
