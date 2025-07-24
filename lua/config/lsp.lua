@@ -167,6 +167,13 @@ vim.lsp.config('intelephense', {
 })
 
 vim.lsp.enable('phpstan')
+vim.lsp.config('phpstan', {
+  init_options = {
+    ['language_server_phpstan.enabled'] = true,
+    ['language_server_psalm.enabled'] = false,
+    ['language_server_highlight.enabled'] = false,
+  }
+})
 
 vim.lsp.enable('twiggy_language_server')
 
