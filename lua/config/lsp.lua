@@ -166,7 +166,7 @@ vim.lsp.config('intelephense', {
   }
 })
 
-vim.lsp.enable('phpactor')
+vim.lsp.enable('phpstan')
 
 vim.lsp.enable('twiggy_language_server')
 
