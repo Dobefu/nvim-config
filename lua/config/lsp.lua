@@ -32,6 +32,7 @@ mason_lspconfig.setup({
     'jsonls',
     'lua_ls',
     'mdx_analyzer',
+    'phpactor',
     'svelte',
     'tailwindcss',
     'ts_ls',
@@ -155,23 +156,25 @@ vim.lsp.enable('vimls')
 
 vim.lsp.enable('jsonls')
 
-vim.lsp.enable('intelephense')
-vim.lsp.config('intelephense', {
-  settings = {
-    intelephense = {
-      format = {
-        enable = false
-      }
-    }
-  }
-})
+-- vim.lsp.enable('intelephense')
+-- vim.lsp.config('intelephense', {
+--   settings = {
+--     intelephense = {
+--       format = {
+--         enable = false
+--       }
+--     }
+--   }
+-- })
 
-vim.lsp.enable('phpstan')
-vim.lsp.config('phpstan', {
+vim.lsp.enable('phpactor')
+vim.lsp.config('phpactor', {
   init_options = {
     ['language_server_phpstan.enabled'] = true,
-    ['language_server_psalm.enabled'] = false,
+    ['language_server_psalm.enabled'] = true,
     ['language_server_highlight.enabled'] = false,
+    ['php_code_sniffer.enabled'] = true,
+    ['prophecy.enabled'] = true,
   }
 })
 
