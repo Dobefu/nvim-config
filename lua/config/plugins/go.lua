@@ -6,7 +6,6 @@ local capabilities = cmp_nvim_lsp.default_capabilities(
 )
 
 go.setup({
-  run_in_floaterm = true,
   trouble = true,
   luasnip = true,
   lsp_cfg = {
@@ -15,9 +14,15 @@ go.setup({
   golangci_lint = {
     default = 'standard',
     enable = {
+      'errcheck',
+      'gocognit',
       'govet',
       'ineffassign',
+      'paralleltest',
       'revive',
+      'sloglint',
+      'staticcheck',
+      'unused',
     },
   },
 })

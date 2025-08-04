@@ -419,3 +419,12 @@ vim.keymap.set(
   function() vim.diagnostic.jump({ count = -1 }) end,
   { desc = 'Go to previous LSP issue' }
 )
+
+vim.keymap.set(
+  'n',
+  '<leader>ca',
+  function()
+    vim.lsp.buf.code_action({ apply = true })
+  end,
+  { desc = 'Run code action' }
+)
