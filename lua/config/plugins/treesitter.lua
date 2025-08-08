@@ -12,6 +12,7 @@ treesitter_configs.setup({
     'gowork',
     'html',
     'javascript',
+    'jsdoc',
     'json',
     'jsonc',
     'latex',
