@@ -1,6 +1,6 @@
 vim.filetype.add({
   extension = {
     mdx = 'mdx',
-    dl = 'dl',
+    dl = 'dlitescript',
   }
 })

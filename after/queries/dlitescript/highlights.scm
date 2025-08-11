@@ -1,0 +1,1 @@
+/Users/connor.vanspronssen/Projects/Web/Golang/tree-sitter-dlitescipt/queries/highlights.scm
