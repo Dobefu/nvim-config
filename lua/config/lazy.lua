@@ -335,6 +335,12 @@ require('lazy').setup({
         file_types = { 'markdown', 'mdx' },
       },
     },
+    {
+      dir = '~/Projects/Web/Golang/nvim-dlitescript',
+      opts = {
+        file_types = { 'dl' },
+      },
+    },
   },
   checker = { enabled = false },
 })
