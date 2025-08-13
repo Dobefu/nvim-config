@@ -337,6 +337,7 @@ require('lazy').setup({
     },
     {
       dir = '~/Projects/Web/Golang/nvim-dlitescript',
+      dependencies = { 'nvim-treesitter/nvim-treesitter' },
       opts = {
         file_types = { 'dl' },
       },
