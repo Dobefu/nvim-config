@@ -37,6 +37,7 @@ mason_lspconfig.setup({
     'ts_ls',
     'twiggy_language_server',
     'vimls',
+    'vue_ls',
     'yamlls',
   }
 })
@@ -112,8 +113,6 @@ vim.lsp.enable('vue_ls')
 vim.lsp.config('vue_ls', {
   filetypes = {
     'typescript',
-    'javascript',
-    'javascriptreact',
     'typescriptreact',
     'vue',
   },
