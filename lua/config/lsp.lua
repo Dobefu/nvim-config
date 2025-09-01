@@ -80,7 +80,15 @@ vim.lsp.enable('ts_ls')
 vim.lsp.config(
   'ts_ls',
   {
-    single_file_support = false,
+    single_file_support = true,
+    filetypes = {
+      'javascript',
+      'javascriptreact',
+      'javascript.jsx',
+      'typescript',
+      'typescriptreact',
+      'typescript.tsx',
+    },
     init_options = {
       plugins = {
         {
@@ -202,6 +210,7 @@ vim.lsp.enable('bashls')
 
 vim.lsp.enable('eslint')
 vim.lsp.config('eslint', {
+  single_file_support = true,
   filetypes = {
     'javascript',
     'javascriptreact',
