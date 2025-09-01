@@ -81,14 +81,6 @@ vim.lsp.config(
   'ts_ls',
   {
     single_file_support = true,
-    filetypes = {
-      'javascript',
-      'javascriptreact',
-      'javascript.jsx',
-      'typescript',
-      'typescriptreact',
-      'typescript.tsx',
-    },
     init_options = {
       plugins = {
         {
@@ -233,8 +225,6 @@ vim.lsp.config('golangci_lint_ls', {
       'run',
       '--output.json.path=stdout',
       '--show-stats=false',
-      '--enable',
-      'govet,ineffassign,revive',
     },
   },
 })
