@@ -76,11 +76,11 @@ vim.lsp.config('gopls', {
   },
 })
 
-vim.lsp.enable('ts_ls')
-vim.lsp.config(
-  'ts_ls',
-  {
+lspconfig = require('lspconfig')
+
+lspconfig.ts_ls.setup({
     single_file_support = true,
+    root_markers = { 'jsconfig.json', 'tsconfig.json', 'package.json', '.git' },
     init_options = {
       plugins = {
         {
@@ -106,8 +106,7 @@ vim.lsp.config(
         },
       },
     },
-  }
-)
+})
 
 vim.lsp.enable('vue_ls')
 vim.lsp.config('vue_ls', {
