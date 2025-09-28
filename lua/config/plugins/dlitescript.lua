@@ -26,9 +26,17 @@ dlitescript.setup({
     cmd = {
       'sh',
       '-c',
-      'cd ~/Projects/Web/Golang/DLiteScript && go run . lint ${INPUT}',
+      'cd ~/Projects/Web/Golang/DLiteScript && go run . lint $1',
     },
     run_on_save = true,
     run_on_change = false,
+  },
+  format = {
+    enable = true,
+    cmd = {
+      'sh',
+      '-c',
+      'cd ~/Projects/Web/Golang/DLiteScript && go run . fmt $1',
+    },
   },
 })
