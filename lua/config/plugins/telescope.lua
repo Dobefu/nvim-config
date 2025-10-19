@@ -14,6 +14,7 @@ vim.keymap.set(
   function() builtin.find_files(opts) end,
   { desc = 'Find files' }
 )
+
 vim.keymap.set(
   'n',
   '<C-o>',
