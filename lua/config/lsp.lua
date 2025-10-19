@@ -151,17 +151,6 @@ vim.lsp.enable('vimls')
 
 vim.lsp.enable('jsonls')
 
--- vim.lsp.enable('intelephense')
--- vim.lsp.config('intelephense', {
---   settings = {
---     intelephense = {
---       format = {
---         enable = false
---       }
---     }
---   }
--- })
-
 vim.lsp.enable('phpactor')
 vim.lsp.config('phpactor', {
   init_options = {
