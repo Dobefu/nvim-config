@@ -60,7 +60,6 @@ telescope.setup({
       '.ico$',
       'node_modules/',
       'vendor/',
-      'tempformresults/',
       'web/modules/contrib/',
       'web/themes/contrib/',
       'coverage/',
