@@ -69,8 +69,6 @@ vim.lsp.config('gopls', {
     'gowork',
     'gohtml',
     'gotmpl',
-    'gotexttmpl',
-    'gohtmltmpl',
     'go.html',
     'go.tmpl',
   },
