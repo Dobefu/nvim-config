@@ -1,7 +1,7 @@
+require('config.restore-cursor')
 require('config.lazy')
 require('config.filetypes')
 require('config.lsp')
-require('config.restore-cursor')
 require('config.aliases')
 require('config.autocmds')
 require('config.templates')
