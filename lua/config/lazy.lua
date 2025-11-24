@@ -93,10 +93,6 @@ require('lazy').setup({
       lazy = false,
     },
     {
-      'https://gitlab.com/schrieveslaach/sonarlint.nvim',
-      event = 'VeryLazy',
-    },
-    {
       'j-hui/fidget.nvim',
       lazy = true,
     },

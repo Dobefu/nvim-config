@@ -3,7 +3,6 @@ local mason_lspconfig = require('mason-lspconfig')
 local luasnip = require('luasnip')
 local telescope = require('telescope.builtin')
 local cmp = require('cmp')
-local sonarlint = require('sonarlint')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 local ft_lsp_group = vim.api.nvim_create_augroup(
@@ -269,52 +268,6 @@ vim.lsp.config('lua_ls', {
   settings = {
     Lua = {}
   }
-})
-
-sonarlint.setup({
-  server = {
-    cmd = {
-      'sonarlint-language-server',
-      '-stdio',
-      '-analyzers',
-      vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarcfamily.jar'),
-      vim.fn.expand('$MASON/share/sonarlint-analyzers/sonargo.jar'),
-      vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarhtml.jar'),
-      vim.fn.expand('$MASON/share/sonarlint-analyzers/sonariac.jar'),
-      vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarjs.jar'),
-      vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarlineomnisharp.jar'),
-      vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarphp.jar'),
-      vim.fn.expand('$MASON/share/sonarlint-analyzers/sonartext.jar'),
-      vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarxml.jar'),
-    },
-    settings = {
-      sonarlint = {
-        rules = {
-          ['go:S1186'] = { level = 'on' },
-        },
-      },
-    },
-  },
-  filetypes = {
-    'c',
-    'cpp',
-    'csharp',
-    'css',
-    'docker',
-    'go',
-    'html',
-    'ipython',
-    'java',
-    'javascript',
-    'kubernetes',
-    'typescript',
-    'python',
-    'php',
-    'terraform',
-    'text',
-    'xml',
-    'yaml',
-  },
 })
 
 vim.keymap.set(
