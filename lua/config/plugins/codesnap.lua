@@ -17,6 +17,12 @@ codesnap.setup({
       },
       -- font_family = 'JetBrains Mono',
     },
+    window = {
+      margin = {
+        x = 0,
+        y = 0,
+      },
+    },
   },
   show_line_number = false,
   show_workspace = false,
