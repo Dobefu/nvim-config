@@ -13,9 +13,9 @@ codesnap.setup({
         enable = true,
         separator = '/',
         color = '#80838b',
-        -- font_family = 'JetBrains Mono',
+        font_family = 'MesloLGS NF',
       },
-      -- font_family = 'JetBrains Mono',
+      font_family = 'MesloLGS NF',
     },
     window = {
       margin = {
