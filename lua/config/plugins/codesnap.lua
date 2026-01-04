@@ -8,10 +8,18 @@ codesnap.setup({
       color = '#ffffff',
     },
     background = '#535c68',
+    code_config = {
+      breadcrumbs = {
+        enable = true,
+        separator = '/',
+        color = '#80838b',
+        -- font_family = 'JetBrains Mono',
+      },
+      -- font_family = 'JetBrains Mono',
+    },
   },
   show_line_number = false,
-  has_breadcrumbs = true,
-  show_workspace = true,
+  show_workspace = false,
   bg_x_padding = 0,
   bg_y_padding = 0,
   bg_padding = nil,
@@ -29,5 +37,5 @@ vim.api.nvim_create_user_command(
       end
     )
   end,
-  { nargs = "*", range = "%" }
+  { nargs = '*', range = '%' }
 )
