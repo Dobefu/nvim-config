@@ -14,7 +14,14 @@ codesnap.setup({
 vim.api.nvim_create_user_command(
   'Screenshot',
   function()
-    codesnap.copy_into_clipboard()
+    xpcall(
+      function()
+        codesnap.copy()
+      end,
+      function(err)
+        print(err)
+      end
+    )
   end,
-  { range = true }
+  { nargs = "*", range = "%" }
 )

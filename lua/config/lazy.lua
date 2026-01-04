@@ -48,7 +48,6 @@ require('lazy').setup({
     },
     {
       'mistricky/codesnap.nvim',
-      build = 'make',
     },
     {
       'neovim/nvim-lspconfig',
