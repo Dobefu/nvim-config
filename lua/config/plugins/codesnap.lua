@@ -1,10 +1,16 @@
 local codesnap = require('codesnap')
 
 codesnap.setup({
-  watermark = '',
-  bg_color = '#535c68',
+  snapshot_config = {
+    watermark = {
+      content = '',
+      font_family = 'Pacifico',
+      color = '#ffffff',
+    },
+    background = '#535c68',
+  },
+  show_line_number = false,
   has_breadcrumbs = true,
-  has_line_number = false,
   show_workspace = true,
   bg_x_padding = 0,
   bg_y_padding = 0,
