@@ -27,3 +27,9 @@ vim.api.nvim_create_autocmd('BufNewFile', {
   pattern = '*.php',
   callback = function() vim.cmd('0r ~/.config/nvim/templates/skeleton.php') end
 })
+
+-- Use a template for new Go test files.
+vim.api.nvim_create_autocmd('BufNewFile', {
+  pattern = '*_test.go',
+  callback = function() vim.cmd('0r ~/.config/nvim/templates/skeleton_test.go') end
+})
