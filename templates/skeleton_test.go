@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
+func Test~(t *testing.T) {
 	t.Parallel()
 
 	tests := []struct {
@@ -27,7 +27,7 @@ func Test(t *testing.T) {
 			result := strings.ToUpper(test.input)
 
 			if result != test.expected {
-				t.Fatalf("expected result to equal %s, got %s", test.expected, result)
+				t.Fatalf("expected result to equal '%s', got '%s'", test.expected, result)
 			}
 		})
 	}
