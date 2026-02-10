@@ -27,7 +27,7 @@ func Test~(t *testing.T) {
 			result := strings.ToUpper(test.input)
 
 			if result != test.expected {
-				t.Fatalf("expected result to equal '%s', got '%s'", test.expected, result)
+				t.Fatalf("expected result to equal %q, got %q", test.expected, result)
 			}
 		})
 	}
