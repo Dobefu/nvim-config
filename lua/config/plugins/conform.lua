@@ -2,18 +2,19 @@ local conform = require('conform')
 
 conform.setup({
   formatters_by_ft = {
-    javascript      = { 'prettierd' },
-    typescript      = { 'prettierd' },
-    javascriptreact = { 'prettierd' },
-    typescriptreact = { 'prettierd' },
-    json            = { 'prettierd' },
-    vue             = { 'prettierd' },
-    html            = { 'prettierd' },
-    gohtmltmpl      = {},
     css             = { 'prettierd' },
     go              = { 'goimports', 'gofmt' },
-    markdown        = { 'markdown-toc', 'prettierd' },
+    gohtmltmpl      = {},
+    graphql         = { 'prettierd' },
     groovy          = { 'npm-groovy-lint' },
+    html            = { 'prettierd' },
+    javascript      = { 'prettierd' },
+    javascriptreact = { 'prettierd' },
+    json            = { 'prettierd' },
+    markdown        = { 'markdown-toc', 'prettierd' },
+    typescript      = { 'prettierd' },
+    typescriptreact = { 'prettierd' },
+    vue             = { 'prettierd' },
   },
   format_on_save = {
     timeout_ms = 500,
