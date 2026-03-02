@@ -156,9 +156,9 @@ vim.lsp.config('phpactor', {
     ['language_server_phpstan.enabled'] = true,
     ['language_server_phpstan.config'] = '%project_root%/phpstan.neon',
     ['language_server_psalm.enabled'] = false,
-    ['language_server_highlight.enabled'] = true,
-    ['php_code_sniffer.enabled'] = false,
-    ['prophecy.enabled'] = false,
+    ['language_server_highlight.enabled'] = false,
+    ['php_code_sniffer.enabled'] = true,
+    ['prophecy.enabled'] = true,
   }
 })
 
