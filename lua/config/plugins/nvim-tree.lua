@@ -22,8 +22,11 @@ nvim_tree.setup({
   diagnostics = {
     enable = true,
   },
-  filters = {
-    dotfiles = true,
+  filters = {},
+  filesystem_watchers = {
+    ignore_dirs = {
+      "node_modules",
+    },
   },
 })
 

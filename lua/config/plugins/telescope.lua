@@ -1,6 +1,10 @@
 local telescope = require('telescope')
 local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
+local telescopeConfig = require("telescope.config")
+
+local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
+table.insert(vimgrep_arguments, "--hidden")
 
 local opts = {
   hidden = true,
@@ -46,6 +50,7 @@ telescope.setup({
     preview = {
       treesitter = false,
     },
+    vimgrep_arguments = vimgrep_arguments,
     file_ignore_patterns = {
       '~$',
       'undodir/',
