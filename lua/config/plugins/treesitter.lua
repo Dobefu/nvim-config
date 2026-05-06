@@ -1,7 +1,7 @@
-local treesitter_configs = require('nvim-treesitter.configs')
+local treesitter = require('nvim-treesitter')
 local treesitter_parsers = require("nvim-treesitter.parsers")
 
-treesitter_configs.setup({
+treesitter.setup({
   ensure_installed = {
     'c',
     'comment',
@@ -50,14 +50,14 @@ vim.treesitter.language.register('markdown', 'mdx')
 vim.treesitter.language.register('markdown', 'codecompanion')
 
 -- Custom DLiteScript TreeSitter parser.
-local parser_config = treesitter_parsers.get_parser_configs()
-
-parser_config.dlitescript = {
-  install_info = {
-    url = "/Users/connor.vanspronssen/Projects/Web/Golang/tree-sitter-dlitescipt",
-    files = { "src/parser.c" },
-    branch = "main",
-    generate_requires_npm = false,
-  },
-  filetype = "dlitescript",
-}
+-- local parser_config = treesitter_parsers.get_parser_configs()
+-- 
+-- parser_config.dlitescript = {
+--   install_info = {
+--     url = "/Users/connor.vanspronssen/Projects/Web/Golang/tree-sitter-dlitescipt",
+--     files = { "src/parser.c" },
+--     branch = "main",
+--     generate_requires_npm = false,
+--   },
+--   filetype = "dlitescript",
+-- }
