@@ -227,6 +227,8 @@ vim.lsp.enable('jdtls')
 
 vim.lsp.enable('yamlls')
 
+vim.lsp.enable('vhdl-style-guide')
+
 -- vim.lsp.enable('denols')
 -- vim.lsp.config('denols', {
 --   filetypes = { 'javascript', 'typescript' },

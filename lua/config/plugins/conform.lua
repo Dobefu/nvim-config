@@ -14,7 +14,7 @@ conform.setup({
     markdown        = { 'markdown-toc', 'prettierd' },
     typescript      = { 'prettierd' },
     typescriptreact = { 'prettierd' },
-    vhdl            = { 'ghdl' },
+    vhdl            = { 'vsg' },
     vue             = { 'prettierd' },
   },
   format_on_save = {
