@@ -2,6 +2,7 @@ local conform = require('conform')
 
 conform.setup({
   formatters_by_ft = {
+    c               = { 'clang-format' },
     css             = { 'prettierd' },
     go              = { 'goimports', 'gofmt' },
     gohtmltmpl      = {},
@@ -11,6 +12,7 @@ conform.setup({
     javascript      = { 'prettierd' },
     javascriptreact = { 'prettierd' },
     json            = { 'prettierd' },
+    make            = { 'mbake' },
     markdown        = { 'markdown-toc', 'prettierd' },
     typescript      = { 'prettierd' },
     typescriptreact = { 'prettierd' },

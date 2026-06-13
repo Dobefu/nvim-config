@@ -20,6 +20,7 @@ mason_lspconfig.setup({
     'bashls',
     'css_variables',
     'cssls',
+    'clangd',
     'diagnosticls',
     'docker_compose_language_service',
     'dockerls',
