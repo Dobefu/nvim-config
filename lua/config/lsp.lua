@@ -175,6 +175,10 @@ vim.lsp.config('cssls', {
   },
 })
 
+vim.lsp.enable('clangd')
+vim.lsp.config('clangd', {
+})
+
 vim.lsp.enable('css_variables')
 
 vim.lsp.enable('diagnosticls')
