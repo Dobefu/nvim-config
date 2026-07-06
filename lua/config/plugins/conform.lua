@@ -12,6 +12,7 @@ conform.setup({
     javascript      = { 'prettierd' },
     javascriptreact = { 'prettierd' },
     json            = { 'prettierd' },
+    jsonc           = { 'prettierd' },
     make            = { 'mbake' },
     markdown        = { 'markdown-toc', 'prettierd' },
     typescript      = { 'prettierd' },
