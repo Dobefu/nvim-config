@@ -18,6 +18,7 @@ conform.setup({
     typescriptreact = { 'prettierd' },
     vhdl            = { 'vsg' },
     vue             = { 'prettierd' },
+    yaml            = { 'prettierd' },
   },
   format_on_save = {
     timeout_ms = 500,
