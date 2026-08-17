@@ -337,6 +337,7 @@ require('lazy').setup({
       config = function()
         require('render-markdown').setup({
           code = { disable = { 'mermaid' } },
+          completions = { lsp = { enabled = true } },
         })
       end,
     },
