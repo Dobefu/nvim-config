@@ -334,10 +334,25 @@ require('lazy').setup({
       opts = {
         file_types = { 'markdown', 'mdx' },
       },
+      config = function()
+        require('render-markdown').setup({
+          code = { disable = { 'mermaid' } },
+        })
+      end,
     },
     {
       'Dobefu/nvim-dlitescript',
       dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    },
+    {
+      'folke/snacks.nvim',
+      priority = 1000,
+      lazy = false,
+      opts = {
+        image = {
+          enabled = true,
+        },
+      }
     },
     -- {
     --   dir = '~/Projects/Web/Golang/nvim-dlitescript',

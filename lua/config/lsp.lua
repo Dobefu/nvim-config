@@ -30,6 +30,7 @@ mason_lspconfig.setup({
     'html',
     'jsonls',
     'lua_ls',
+    'marksman',
     'mdx_analyzer',
     'phpactor',
     'svelte',
@@ -279,6 +280,8 @@ vim.lsp.config('lua_ls', {
     Lua = {}
   }
 })
+
+vim.lsp.enable('marksman')
 
 vim.keymap.set(
   'n',
