@@ -161,6 +161,7 @@ vim.lsp.config('phpactor', {
     ['language_server_highlight.enabled'] = false,
     ['php_code_sniffer.enabled'] = true,
     ['prophecy.enabled'] = true,
+    ['completion_worse.completor.symfony.enabled'] = true,
   }
 })
 
