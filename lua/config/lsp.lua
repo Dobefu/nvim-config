@@ -152,6 +152,8 @@ vim.lsp.enable('jsonls')
 
 vim.lsp.enable('phpactor')
 vim.lsp.config('phpactor', {
+  capabilities = lsp_capabilities,
+  filetypes = { 'php' },
   root_markers = { '.git', 'composer.json', '.phpactor.json', '.phpactor.yml' },
   workspace_required = true,
   init_options = {
@@ -161,7 +163,6 @@ vim.lsp.config('phpactor', {
     ['language_server_highlight.enabled'] = false,
     ['php_code_sniffer.enabled'] = true,
     ['prophecy.enabled'] = true,
-    ['completion_worse.completor.symfony.enabled'] = true,
   }
 })
 
